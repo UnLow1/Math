@@ -5,6 +5,7 @@
 \usepackage{color}
 \usepackage{mathtools}
 \usepackage{float}
+\usepackage{mathrsfs}
 
 \newtheorem{df}{Definicja}[section]
 \newtheorem{pr}{Przyk{\l}ad}[section]
@@ -55,13 +56,13 @@ Graf \textbf{G} jest sp\'ojny je\'sli dowolne dwa jego wierzcho{\l}ki s\k{a} po{
 \end{df}
 %% def 1.9
 \begin{df} 
-Automatem nazywamy \textbf{A}=(\textbf{Q}, \textbf{$\Sigma$}, \textbf{$\delta$}), gdzie \textbf{Q} jest zbiorem mo\.{z}liwych stan\'{o}w, \textbf{$\Sigma$} jest alfabetem, natomiast \textbf{$\delta$}:\textbf{Q} x \textbf{$\Sigma$}$\rightarrow$\textbf{Q} jest funkcj\k{a} definiuj\k{a}c\k{a} 	zachowanie si\k{e} litery z \textbf{$\Sigma$} w stanie \textbf{Q}.
+Automatem nazywamy tr\'{o}jk\k{e} $\mathscr{A}=(Q, \Sigma, \delta)$, gdzie Q jest zbiorem mo\.{z}liwych stan\'{o}w, $\Sigma$ jest alfabetem, natomiast $\delta:Q x \Sigma \rightarrow$ Q jest funkcj\k{a} definiuj\k{a}c\k{a} 	zachowanie si\k{e} litery nale\.{z}\k{a}cej do alfabetu $\Sigma$ w stanie Q.
 \end{df}
 
 
 %% SEKCJA 2 Wprowadzenie do problemu
 \newpage
-\section{Wprowadzenie do problemu}
+\section{Wprowadzenie do problemu. Przyk{\l}ady zastosowa\'{n}.}
 
 %%Przykład 2.1
 \begin{pr}
@@ -147,5 +148,28 @@ Pami\k{e}taj\k{a}c s{\l}owo resetuj\k{a}ce w automacie z Rysunku \ref{fig:rysune
 \end{pr}
 
 Jak wida\'{c} nawet dla ma{\l}o skomplikowanego automatu synchronicznego mo\.{z}emy znale\'{z}\'{c} proste zastosowanie, kt\'{o}re oczywi\'{s}cie mo\.{z}emy uog\'{o}lnia\'{c}, a sam automat stara\'{c} si\k{e} rozwija\'{c}, powi\k{e}ksza\'{c}.
+
+
+%% SEKCJA 2 WKW na to, żeby graf był synchronizowalny
+\newpage
+\section{Warunek konieczny i wystarczaj\k{a}cy na synchronizowalno\'{s}\'{c} automatu.}
+
+Oczywistym faktem jest, \.{z}e nie ka\.{z}dy sko\'{n}czony automat jest synchroniczny. Nasuwa si\k{e} wi\k{e}c pytanie, je\'{s}li mamy dany sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$, jak stwierdzi\'{c} czy jest on synchroniczny czy nie?
+
+Konstruujemy automat mocy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o}r $P'(Q)$, kt\'{o}ry jest niepustym podzbiorem Q, a funkcja przejscia $\delta$ jest naturalnie rozszerzona do zbioru $P'(Q)x\Sigma$. Inaczej m\'{o}wi\k{a}c dla ka\.{z}dego niepustego podzbioru $P$ zbioru $Q$ oraz $a \epsilon \Sigma$ mamy $\delta(P,a)=\{\delta(p,a) | p\epsilon P\}$.
+\\
+%% Rysunek 6
+\begin{figure}[H]
+    \includegraphics[width=1.1\textwidth]{rysunek6}
+    \caption{Automat mocy}
+    \label{fig:rysunek6}
+\end{figure}
+
+Na Rysunku \ref{fig:rysunek6} przedstawiony zosta{\l} automat mocy dla sko\'{n}czonego automatu przedstawionego na Rysunku \ref{fig:rysunek1}. S{\l}owo $w \epsilon \Sigma$ jest s{\l}owem resetuj\k{a}cym automat $\mathscr{A}$ je\'{s}li w $P(\mathscr{A})$ \'{s}cie\.{z}ka wygenerowana przez to s{\l}owo, zaczynaj\k{a}ca si\k{e} w dowolnym stanie $q \epsilon Q$ ko\'{n}czy si\k{e} zawsze w tym samym wierzcho{\l}ku. W naszym przypadku s{\l}owem resetuj\k{a}cym jest ju\.{z} wcze\'{s}niej znalezione s{\l}owo $ab^3ab^3a$, a wierzcho{\l}kiem ko\'{n}cowym - wierzcho{\l}ek $2$. Ponadto jest to najkr\'{o}tsze s{\l}owo resetuj\k{a}ce. 
+
+Wnioskujemy wi\k{e}c, \.{z}e algorytm szukania s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ nie jest skomplikowany. Najpierw tworzymy automat mocy $P(\mathscr{A})$, nast\k{e}pnie szukamu s{\l}owa, dzi\k{e}ki kt\'{o}remu startuj\k{a}c z dowolnego stanu dostaniemy si\k{e} do jednego, tego samego wierzcho{\l}ka - mo\.{z}emy tutaj zastosowa\'{c} algorytm przeszukiwania 
+wszerz (BFS), kt\'{o}ry pomo\.{z}e znale\'{z}\'{c} takie s{\l}owo albo stwierdzi\'{c}, i\.{z} ono nie istenieje. Problem jednak w tym, \.{z}e rozmiar automatu mocy $P(\mathscr{A})$ jest wyk{\l}adniczo wi\k{e}kszy od rozmiaru automatu $\mathscr{A}$. Otrzymany w ten spos\'{o}b algorytm ma z{\l}o\.{z}ono\'{s}\'{c} wielomianow\k{a}.
+
+
 
 \end{document}
