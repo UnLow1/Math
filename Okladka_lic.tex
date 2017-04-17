@@ -9,6 +9,7 @@
 
 \newtheorem{df}{Definicja}[section]
 \newtheorem{pr}{Przyk{\l}ad}[section]
+\newtheorem{twr}{Twierdzenie}[section]
 
 \begin{document}
 
@@ -66,7 +67,8 @@ Automatem nazywamy tr\'{o}jk\k{e} $\mathscr{A}=(Q, \Sigma, \delta)$, gdzie Q jes
 
 %%Przykład 2.1
 \begin{pr}
-Przyk{\l}adem synchronicznego automatu z czterema stanami Q = \textbraceleft 1, 2, 3, 4\textbraceright  oraz alfabetem sk{\l}adaj\k{a}cym si\k{e} z dw\'{o}ch liter $\Sigma$ = \textbraceleft a, b\textbraceright  mo\.{z}e by\'c poni\.{z}szy graf.
+\label{pr:przyklad1}
+Przyk{\l}adem synchronicznego automatu  $\mathscr{A}$ z czterema stanami Q = \textbraceleft 1, 2, 3, 4\textbraceright  oraz alfabetem sk{\l}adaj\k{a}cym si\k{e} z dw\'{o}ch liter $\Sigma$ = \textbraceleft a, b\textbraceright  mo\.{z}e by\'c poni\.{z}szy graf.
 %% Rysunek 1
 \begin{figure}[H]
     \centering
@@ -75,7 +77,7 @@ Przyk{\l}adem synchronicznego automatu z czterema stanami Q = \textbraceleft 1, 
     \label{fig:rysunek1}
 \end{figure}
 
-{\L}atwo mo\.{z}emy sprawdzi\'{c}, \.{z}e s{\l}owem resetuj\k{a}cym automat na rysunku \ref{fig:rysunek1} jest \textit{abbbabbba}, co r\'{o}wnowa\.{z}nie mo\.{z}emy zapisa\'{c} \textit{a$b^{3}$a$b^{3}$a}. Pos{\l}ugujac si\k{e} tym s{\l}owem zawsze \'{s}cie\.{z}ka sko\'{n}czy si\k{e} na wierzcho{\l}ku drugim.\\
+{\L}atwo mo\.{z}emy sprawdzi\'{c}, \.{z}e s{\l}owem resetuj\k{a}cym automat na rysunku \ref{fig:rysunek1} jest \textit{abbbabbba}, co r\'{o}wnowa\.{z}nie mo\.{z}emy zapisa\'{c} \textit{a$b^{3}$a$b^{3}$a}. Pos{\l}ugujac si\k{e} tym s{\l}owem, niezale\.{z}nie od stanu pocz\k{a}tgowego, \'{s}cie\.{z}ka zawsze sko\'{n}czy si\k{e} na wierzcho{\l}ku drugim.\\
 \\
 \textbf{1}$\xrightarrow{a}$2$\xrightarrow{b}$3$\xrightarrow{b}$4$\xrightarrow{b}$1$\xrightarrow{a}$2$\xrightarrow{b}$3$\xrightarrow{b}$4$\xrightarrow{b}$1$\xrightarrow{a}$\textbf{2}\\
 \textbf{2}$\xrightarrow{a}$2$\xrightarrow{b}$3$\xrightarrow{b}$4$\xrightarrow{b}$1$\xrightarrow{a}$2$\xrightarrow{b}$3$\xrightarrow{b}$4$\xrightarrow{b}$1$\xrightarrow{a}$\textbf{2}\\
@@ -87,7 +89,7 @@ Rozwa\.{z}my teraz troszk\k{e} bardziej rozbudowany automat, tak zwany automat A
 
 %% Przykład 2.2
 \begin{pr}
-W tym automacie mamy tyle samo stan\'{o}w co wcze\'{s}niej  Q = \textbraceleft 00, 01, 10, 11\textbraceright, lecz ilo\'{s}\'{c} liter w alfabecie zosta{\l}a zwi\k{e}kszona do czterech $\Sigma$ = \textbraceleft a, b, c, d\textbraceright. Ka\.{z}dy stan sk{\l}ada si\k{e} z dw\'{o}ch cyfr, pierwsza b\k{e}dzie odpowiada{\l}a za ha{\l}as generowany przez \'{s}piew, a druga przez \'{s}miech, gdzie \textit{0} oznacza\'{c} b\k{e}dzie brak ha{\l}asu, natomiast \textit{1} generowanie nieprzyjemnego d\'{z}wi\k{e}ku.
+W tym automacie mamy tyle samo stan\'{o}w co w Przyk{\l}adzie \ref{pr:przyklad1}  Q = \textbraceleft 00, 01, 10, 11\textbraceright, lecz ilo\'{s}\'{c} liter w alfabecie zosta{\l}a zwi\k{e}kszona do czterech $\Sigma$ = \textbraceleft a, b, c, d\textbraceright. Ka\.{z}dy stan sk{\l}ada si\k{e} z dw\'{o}ch cyfr, pierwsza b\k{e}dzie odpowiada{\l}a za ha{\l}as generowany przez \'{s}piew, a druga przez \'{s}miech, gdzie \textit{0} oznacza\'{c} b\k{e}dzie brak ha{\l}asu, natomiast \textit{1} generowanie nieprzyjemnego d\'{z}wi\k{e}ku.
 
 %% Rysunek 2
 \begin{figure}[H]
@@ -134,7 +136,7 @@ Ka\.{z}dy taki element wk{\l}adamy do pude{\l}ka, lecz zanim to zrobimy musimy j
     \label{fig:rysunek4}
 \end{figure}
 
-Za{\l}\'{o}\.{z}my, \.{z}e interesuj\k{a}ca dla nas jest druga od lewej strony orientacja elementu. Skorzystamy z lekko zmodyfikowanego automatu, kt\'{o}ry juz wcze\'{s}niej poznali\'{s}my, a dok{\l}adniej z automatu przedstawionego na Rysunku \ref{fig:rysunek1}. G{\l}\'{o}wna zmiana b\k{e}dzie polega{\l}a na tym, i\.{z} moz\.{z}liwe stany, kt\'{o}re automat mo\.{z}e przyj\k{a}\'{c} b\k{e}d\k{a} kolejnymi orientacjami tego elementu.
+Za{\l}\'{o}\.{z}my, \.{z}e interesuj\k{a}ca dla nas jest druga od lewej strony orientacja elementu. Skorzystamy z lekko zmodyfikowanego automatu, kt\'{o}ry juz wcze\'{s}niej poznali\'{s}my, a dok{\l}adniej z automatu przedstawionego na Rysunku \ref{fig:rysunek1}. G{\l}\'{o}wna zmiana b\k{e}dzie polega{\l}a na tym, i\.{z} mo\.{z}liwe stany, kt\'{o}re automat mo\.{z}e przyj\k{a}\'{c} b\k{e}d\k{a} kolejnymi orientacjami tego elementu.
 \\
 %% Rysunek 5
 \begin{figure}[H]
@@ -147,16 +149,36 @@ Za{\l}\'{o}\.{z}my, \.{z}e interesuj\k{a}ca dla nas jest druga od lewej strony o
 Pami\k{e}taj\k{a}c s{\l}owo resetuj\k{a}ce w automacie z Rysunku \ref{fig:rysunek1} abbbabbba wnioskujemy, \.{z}e s{\l}owem resetuj\k{a}cym automat na Rysunku \ref{fig:rysunek5} jest low-HIGH-HIGH-HIGH-low-HIGH-HIGH-HIGH-low, a stan ko\'{n}cowy to orientacja elementu, kt\'{o}r\k{a} chcieli\'{s}my uzyska\'{c}.
 \end{pr}
 
-Jak wida\'{c} nawet dla ma{\l}o skomplikowanego automatu synchronicznego mo\.{z}emy znale\'{z}\'{c} proste zastosowanie, kt\'{o}re oczywi\'{s}cie mo\.{z}emy uog\'{o}lnia\'{c}, a sam automat stara\'{c} si\k{e} rozwija\'{c}, powi\k{e}ksza\'{c}.
+Jak wida\'{c} nawet dla ma{\l}o skomplikowanego automatu synchronicznego mo\.{z}emy znale\'{z}\'{c} proste, a przede wszystkim z \.{z}ycia wzi\k{e}te zastosowanie, kt\'{o}re oczywi\'{s}cie mo\.{z}emy uog\'{o}lnia\'{c}, a sam automat stara\'{c} si\k{e} rozwija\'{c}, powi\k{e}ksza\'{c}.
 
 
-%% SEKCJA 2 WKW na to, żeby graf był synchronizowalny
+%% SEKCJA 3 WKW na to, żeby graf był synchronizowalny z dowodem
 \newpage
 \section{Warunek konieczny i wystarczaj\k{a}cy na synchronizowalno\'{s}\'{c} automatu.}
 
 Oczywistym faktem jest, \.{z}e nie ka\.{z}dy sko\'{n}czony automat jest synchroniczny. Nasuwa si\k{e} wi\k{e}c pytanie, je\'{s}li mamy dany sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$, jak stwierdzi\'{c} czy jest on synchroniczny czy nie?
 
-Konstruujemy automat mocy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o}r $P'(Q)$, kt\'{o}ry jest niepustym podzbiorem Q, a funkcja przejscia $\delta$ jest naturalnie rozszerzona do zbioru $P'(Q)x\Sigma$. Inaczej m\'{o}wi\k{a}c dla ka\.{z}dego niepustego podzbioru $P$ zbioru $Q$ oraz $a \epsilon \Sigma$ mamy $\delta(P,a)=\{\delta(p,a) | p\epsilon P\}$.
+%% Twierdzenie 3.1
+\begin{twr}
+\label{tw:twierdzenie1}
+Sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$ jest synchroniczny wtedy i tylko wtedy, gdy dla ka\.{z}dego stanu $q, q' \epsilon Q$ istnieje s{\l}owo $w \epsilon \Sigma$ takie, \.{z}e $\delta(q,w)=\delta(q',w)$.
+\end{twr}
+
+Zredukujmy problem z Twierdzenia \ref{tw:twierdzenie1} dotycz\k{a}cego synchronizowalno\'{s}ci automatu do problemu zasi\k{e}gu w podautomacie $P^{[2]}(\mathscr{A})$ automatu mocy $P(\mathscr{A})$, kt\'{o}rego zbi\'{o}r stan\'{o}w jest z{\l}o\.{z}ony z jednoelementowych oraz dwuelementowych podzbior\'{o}w zbioru $Q$. Podautomat posiada $\frac{|Q|(|Q|+1)}{2}$ stan\'{o}w. Algorytm BFS, czyli przeszukiwanie grafu wszerz, rozwi\k{a}zuje ten problem w czasie $O(|Q|^2*|\Sigma|)$. To ograniczenie pozwala wnioskowa\'{c}, i\.{z} je\'{s}li s{\l}owo resetuj\k{a}ce nie istnieje dostaniemy o tym stosown\k{a} informacj\k{e} w sko\'{n}czonej jednostce czasu, kt\'{o}rej wielko\'{s}\'{c} zale\.{z}y od rozmiaru zbioru stan\'{o}w oraz alfabetu. Je\'{s}li natomiast automat $\mathscr{A}$ jest synchroniczny, jako wynik algorytmu wyprodukowane zostanie s{\l}owo resetuj\k{a}ce ten automat. Najlepszy znany algorytm, kt\'{o}ry jako wynik daje s{\l}owo resetuj\k{a}ce posiada z{\l}o\.{z}ono\'{s}\'{c} czasow\k{a} rz\k{e}du $O(|Q|^3+|Q|^2*|\Sigma|)$ oraz z{\l}o\.{z}ono\'{s}\'{c} pami\k{e}ciow\k{a} rz\k{e}du $O(|Q|^2*|\Sigma|)$, nie licz\k{a}c pami\k{e}ci potrzebnej na zapisanie wyniku, kt\'{o}ra jest rz\k{e}du $O(|Q|^3)$.
+
+
+%% SEKCJA 4 Problem długości słowa synchronizującego
+\section{Problem d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego.}
+
+%% SEKCJA 5 Hipoteza Cernego
+\section{Hipoteza \v Cernego.}
+
+
+%% SEKCJA 6 Algorytm znajdowania słowa sychronizującego
+\newpage
+\section{Algorytm znajdowania s{\l}owa synchronizuj\k{a}cego.}
+
+Za{\l}\'{o}\.{z}my, \.{z}e mamy dany automat  $\mathscr{A}=(Q, \Sigma, \delta)$. Konstruujemy automat mocy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o}r $P'(Q)$, kt\'{o}ry jest niepustym podzbiorem Q, a funkcja przejscia $\delta$ jest naturalnie rozszerzona do zbioru $P'(Q)x\Sigma$. Inaczej m\'{o}wi\k{a}c dla ka\.{z}dego niepustego podzbioru $P$ zbioru $Q$ oraz $a \epsilon \Sigma$ mamy $\delta(P,a)=\{\delta(p,a) | p\epsilon P\}$.
 \\
 %% Rysunek 6
 \begin{figure}[H]
@@ -167,9 +189,24 @@ Konstruujemy automat mocy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o
 
 Na Rysunku \ref{fig:rysunek6} przedstawiony zosta{\l} automat mocy dla sko\'{n}czonego automatu przedstawionego na Rysunku \ref{fig:rysunek1}. S{\l}owo $w \epsilon \Sigma$ jest s{\l}owem resetuj\k{a}cym automat $\mathscr{A}$ je\'{s}li w $P(\mathscr{A})$ \'{s}cie\.{z}ka wygenerowana przez to s{\l}owo, zaczynaj\k{a}ca si\k{e} w dowolnym stanie $q \epsilon Q$ ko\'{n}czy si\k{e} zawsze w tym samym wierzcho{\l}ku. W naszym przypadku s{\l}owem resetuj\k{a}cym jest ju\.{z} wcze\'{s}niej znalezione s{\l}owo $ab^3ab^3a$, a wierzcho{\l}kiem ko\'{n}cowym - wierzcho{\l}ek $2$. Ponadto jest to najkr\'{o}tsze s{\l}owo resetuj\k{a}ce. 
 
-Wnioskujemy wi\k{e}c, \.{z}e algorytm szukania s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ nie jest skomplikowany. Najpierw tworzymy automat mocy $P(\mathscr{A})$, nast\k{e}pnie szukamu s{\l}owa, dzi\k{e}ki kt\'{o}remu startuj\k{a}c z dowolnego stanu dostaniemy si\k{e} do jednego, tego samego wierzcho{\l}ka - mo\.{z}emy tutaj zastosowa\'{c} algorytm przeszukiwania 
+Reasumuj\k{a}c algorytm szukania s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ nie jest skomplikowany. W skr\'{o}cie najpierw tworzymy automat mocy $P(\mathscr{A})$, nast\k{e}pnie szukamy s{\l}owa, dzi\k{e}ki kt\'{o}remu startuj\k{a}c z dowolnego stanu dostaniemy si\k{e} do jednego, tego samego wierzcho{\l}ka - mo\.{z}emy tutaj zastosowa\'{c} algorytm przeszukiwania 
 wszerz (BFS), kt\'{o}ry pomo\.{z}e znale\'{z}\'{c} takie s{\l}owo albo stwierdzi\'{c}, i\.{z} ono nie istenieje. Problem jednak w tym, \.{z}e rozmiar automatu mocy $P(\mathscr{A})$ jest wyk{\l}adniczo wi\k{e}kszy od rozmiaru automatu $\mathscr{A}$. Otrzymany w ten spos\'{o}b algorytm ma z{\l}o\.{z}ono\'{s}\'{c} wielomianow\k{a}.
 
 
 
+%% SEKCJA 7 Oszacowanie długości słowa synchronizującego z dowodem
+\section{Oszacowanie d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego.}
+
+
 \end{document}
+
+
+\begin{comment}
+PYTANIA
+
+Często używam BFS-a, może po krótce gdzieś go opisać? Jakiś jeden krótki przykład?
+
+Sekcja 3:
+Może jakieś inne opracowanie tego dowodu? Co to jest P^[2](A)? Czy to na pewno jest podautomat automatu mocy P(A)? Czy dobrze został przetłumaczony fragment "reachability problem" na problem zasięgu w podautomacie P^[2](A)? Algorytm BFS daje tylko informację o tym czy słowo synchronizujące istnieje, a żeby znaleźć to słowo trzeba użyć tego algorytmu o złożoności O(|Q|^3+|Q|^2*|\Sigma|)?
+
+\end{comment}
