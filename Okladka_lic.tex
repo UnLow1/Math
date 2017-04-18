@@ -10,6 +10,7 @@
 \newtheorem{df}{Definicja}[section]
 \newtheorem{pr}{Przyk{\l}ad}[section]
 \newtheorem{twr}{Twierdzenie}[section]
+\newtheorem{pro}{Problem}[section]
 
 \begin{document}
 
@@ -24,36 +25,36 @@
 \section{Podstawowe definicje.}
 %% def 1.1
 \begin{df} 
-Grafem nazywamy \textbf{G}=(\textbf{V},\textbf{E}), gdzie \textbf{V} jest niepustym zbiorem, kt\'orego elementy zwane s\k{a} wierzcho{\l}kami a \textbf{E} jest rodzin\k{a} dwuelemntowych podzbior\'ow zbioru \textbf{V}, zwanych kraw\k{e}dziami.
-$\textbf{E}=\{vw : v,w\in\textbf{V}\}$.
+Grafem nazywamy $G=(V,E)$, gdzie $V$ jest niepustym zbiorem, kt\'orego elementy zwane s\k{a} wierzcho{\l}kami a $E$ jest rodzin\k{a} dwuelemntowych podzbior\'ow zbioru $V$, zwanych kraw\k{e}dziami.
+$E=\{vw : v,w\in V \}$.
 \end{df}
 %% def 1.2
 \begin{df} 
-Niech \textbf{G}=(\textbf{V},\textbf{E}) b\k{e}dzie grafem. Liczb\k{e} wierzcho{\l}\'ow grafu \textbf{G} nazywamy rz\k{e}dem grafu i oznaczamy $|\textbf{V}|$, natomiast liczb\k{e} kraw\k{e}dzi nazywamy rozmiarem grafu i oznaczamy $|\textbf{E}|$
+Niech $G=(V,E)$ b\k{e}dzie grafem. Liczb\k{e} wierzcho{\l}\'ow grafu $G$ nazywamy rz\k{e}dem grafu i oznaczamy $|V|$, natomiast liczb\k{e} kraw\k{e}dzi nazywamy rozmiarem grafu i oznaczamy $|E|$
 \end{df}
 %% def 1.3
 \begin{df} 
-Niech \textbf{G}=(\textbf{V},\textbf{E}) b\k{e}dzie grafem. Zbi\'or s\k{a}siad\'ow wierzcho{\l}ka $v\in\textbf{V}$ $\textbf{N}(v)$ sk{\l}ada si\k{e} z wszystkich wierzcho{\l}k\'ow grafu \textbf{G}, takich \.ze istniej\k{a} kraw\k{e}dzie nale\.z\k{a}ce do zbioru \textbf{E}, {\l}\k{a}cz\k{a}ce te wierzcho{\l}ki z v. $\textbf{N}(v)=\{w : vw\in\textbf{E}\}$.
+Niech $G=(V,E)$ b\k{e}dzie grafem. Zbi\'or s\k{a}siad\'ow wierzcho{\l}ka $v\in V$ $N(v)$ sk{\l}ada si\k{e} z wszystkich wierzcho{\l}k\'ow grafu $G$, takich \.ze istniej\k{a} kraw\k{e}dzie nale\.z\k{a}ce do zbioru $E$, {\l}\k{a}cz\k{a}ce te wierzcho{\l}ki z v. $N(v)=\{w : vw\in E\}$.
 \end{df} 
 %% def 1.4
 \begin{df} 
-Niech \textbf{G}=(\textbf{V},\textbf{E}) b\k{e}dzie grafem. Stopniem wierzcho{\l}ka $v\in\textbf{V}$ nazywamy liczb\k{e} jego s\k{a}siad\'ow i oznaczamy $deg(v)$.
+Niech $G=(V,E)$ b\k{e}dzie grafem. Stopniem wierzcho{\l}ka $v\in V$ nazywamy liczb\k{e} jego s\k{a}siad\'ow i oznaczamy $deg(v)$.
 \end{df}
 %% def 1.5
 \begin{df} 
-Graf \textbf{G}=(\textbf{V},\textbf{E}) jest r-regularny, je\.zeli wszystkie jego wierzcho{\l}ki maj\k{a} stopie\'n r\'owny r.
+Graf $G=(V,E)$ jest r-regularny, je\.zeli wszystkie jego wierzcho{\l}ki maj\k{a} stopie\'n r\'owny r.
 \end{df} 
 %% def 1.6
 \begin{df} 
-Kraw\k{e}dzi\k{a} skierowan\k{a} lub {\l}ukiem grafu \textbf{G}=(\textbf{V},\textbf{E}) nazywamy uporz\k{a}dkowan\k{a} par\k{e} wierzcho{\l}k\'ow $e=(v,w)$, gdzie $v\in\textbf{V}$ jest pocz\k{a}tkiem {\l}uku $e$, natomiast $w\in\textbf{V}$ jego ko\'ncem. Graf sk{\l}adaj\k{a}cy si\k{e} z kraw\k{e}dzi skierowanych nazywamy grafem skierowanym.
+Kraw\k{e}dzi\k{a} skierowan\k{a} lub {\l}ukiem grafu $G=(V,E)$ nazywamy uporz\k{a}dkowan\k{a} par\k{e} wierzcho{\l}k\'ow $e=(v,w)$, gdzie $v\in V$ jest pocz\k{a}tkiem {\l}uku $e$, natomiast $w\in V$ jego ko\'ncem. Graf sk{\l}adaj\k{a}cy si\k{e} z kraw\k{e}dzi skierowanych nazywamy grafem skierowanym.
 \end{df}
 %% def 1.7
 \begin{df} 
-Niech \textbf{G}=(\textbf{V},\textbf{E}) b\k{e}dzie grafem. Ci\k{a}g wierzcho{\l}k\'ow $(v_{1},\ldots,v_{n})$, taki \.ze $\forall_{i}$ $v_{i}\in\textbf{V}$ oraz  $(v_{i-1},v_{i})\in\textbf{E}$ dla $i=2,\ldots,n$ nazywamy \'scie\.zk\k{a} w grafie \textbf{G}.
+Niech $G=(V,E)$ b\k{e}dzie grafem. Ci\k{a}g wierzcho{\l}k\'ow $(v_{1},\ldots,v_{n})$, taki \.ze $\forall_{i}$ $v_{i}\in V$ oraz  $(v_{i-1},v_{i})\in E$ dla $i=2,\ldots,n$ nazywamy \'scie\.zk\k{a} w grafie $G$.
 \end{df} 
 %% def 1.8
 \begin{df} 
-Graf \textbf{G} jest sp\'ojny je\'sli dowolne dwa jego wierzcho{\l}ki s\k{a} po{\l}\k{a}czone \'scie\.zk\k{a}.
+Graf $G$ jest sp\'ojny je\'sli dowolne dwa jego wierzcho{\l}ki s\k{a} po{\l}\k{a}czone \'scie\.zk\k{a}.
 \end{df}
 %% def 1.9
 \begin{df} 
@@ -152,29 +153,7 @@ Pami\k{e}taj\k{a}c s{\l}owo resetuj\k{a}ce w automacie z Rysunku \ref{fig:rysune
 Jak wida\'{c} nawet dla ma{\l}o skomplikowanego automatu synchronicznego mo\.{z}emy znale\'{z}\'{c} proste, a przede wszystkim z \.{z}ycia wzi\k{e}te zastosowanie, kt\'{o}re oczywi\'{s}cie mo\.{z}emy uog\'{o}lnia\'{c}, a sam automat stara\'{c} si\k{e} rozwija\'{c}, powi\k{e}ksza\'{c}.
 
 
-%% SEKCJA 3 WKW na to, żeby graf był synchronizowalny z dowodem
-\newpage
-\section{Warunek konieczny i wystarczaj\k{a}cy na synchronizowalno\'{s}\'{c} automatu.}
-
-Oczywistym faktem jest, \.{z}e nie ka\.{z}dy sko\'{n}czony automat jest synchroniczny. Nasuwa si\k{e} wi\k{e}c pytanie, je\'{s}li mamy dany sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$, jak stwierdzi\'{c} czy jest on synchroniczny czy nie?
-
-%% Twierdzenie 3.1
-\begin{twr}
-\label{tw:twierdzenie1}
-Sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$ jest synchroniczny wtedy i tylko wtedy, gdy dla ka\.{z}dego stanu $q, q' \epsilon Q$ istnieje s{\l}owo $w \epsilon \Sigma$ takie, \.{z}e $\delta(q,w)=\delta(q',w)$.
-\end{twr}
-
-Zredukujmy problem z Twierdzenia \ref{tw:twierdzenie1} dotycz\k{a}cego synchronizowalno\'{s}ci automatu do problemu zasi\k{e}gu w podautomacie $P^{[2]}(\mathscr{A})$ automatu mocy $P(\mathscr{A})$, kt\'{o}rego zbi\'{o}r stan\'{o}w jest z{\l}o\.{z}ony z jednoelementowych oraz dwuelementowych podzbior\'{o}w zbioru $Q$. Podautomat posiada $\frac{|Q|(|Q|+1)}{2}$ stan\'{o}w. Algorytm BFS, czyli przeszukiwanie grafu wszerz, rozwi\k{a}zuje ten problem w czasie $O(|Q|^2*|\Sigma|)$. To ograniczenie pozwala wnioskowa\'{c}, i\.{z} je\'{s}li s{\l}owo resetuj\k{a}ce nie istnieje dostaniemy o tym stosown\k{a} informacj\k{e} w sko\'{n}czonej jednostce czasu, kt\'{o}rej wielko\'{s}\'{c} zale\.{z}y od rozmiaru zbioru stan\'{o}w oraz alfabetu. Je\'{s}li natomiast automat $\mathscr{A}$ jest synchroniczny, jako wynik algorytmu wyprodukowane zostanie s{\l}owo resetuj\k{a}ce ten automat. Najlepszy znany algorytm, kt\'{o}ry jako wynik daje s{\l}owo resetuj\k{a}ce posiada z{\l}o\.{z}ono\'{s}\'{c} czasow\k{a} rz\k{e}du $O(|Q|^3+|Q|^2*|\Sigma|)$ oraz z{\l}o\.{z}ono\'{s}\'{c} pami\k{e}ciow\k{a} rz\k{e}du $O(|Q|^2*|\Sigma|)$, nie licz\k{a}c pami\k{e}ci potrzebnej na zapisanie wyniku, kt\'{o}ra jest rz\k{e}du $O(|Q|^3)$.
-
-
-%% SEKCJA 4 Problem długości słowa synchronizującego
-\section{Problem d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego.}
-
-%% SEKCJA 5 Hipoteza Cernego
-\section{Hipoteza \v Cernego.}
-
-
-%% SEKCJA 6 Algorytm znajdowania słowa sychronizującego
+%% SEKCJA 3 Algorytm znajdowania słowa sychronizującego
 \newpage
 \section{Algorytm znajdowania s{\l}owa synchronizuj\k{a}cego.}
 
@@ -193,10 +172,70 @@ Reasumuj\k{a}c algorytm szukania s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$
 wszerz (BFS), kt\'{o}ry pomo\.{z}e znale\'{z}\'{c} takie s{\l}owo albo stwierdzi\'{c}, i\.{z} ono nie istenieje. Problem jednak w tym, \.{z}e rozmiar automatu mocy $P(\mathscr{A})$ jest wyk{\l}adniczo wi\k{e}kszy od rozmiaru automatu $\mathscr{A}$. Otrzymany w ten spos\'{o}b algorytm ma z{\l}o\.{z}ono\'{s}\'{c} wielomianow\k{a}.
 
 
+%% SEKCJA 4 WKW na to, żeby graf był synchronizowalny z dowodem
+\newpage
+\section{Warunek konieczny i wystarczaj\k{a}cy na synchronizowalno\'{s}\'{c} automatu.}
+
+Oczywistym faktem jest, \.{z}e nie ka\.{z}dy sko\'{n}czony automat jest synchroniczny. Nasuwa si\k{e} wi\k{e}c pytanie, je\'{s}li mamy dany sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$, jak stwierdzi\'{c} czy jest on synchroniczny czy nie?
+
+%% Twierdzenie 3.1
+\begin{twr}
+\label{tw:twierdzenie1}
+Sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$ jest synchroniczny wtedy i tylko wtedy, gdy dla ka\.{z}dego stanu $q, q' \epsilon Q$ istnieje s{\l}owo $w \epsilon \Sigma$ takie, \.{z}e $\delta(q,w)=\delta(q',w)$.
+\end{twr}
+
+Zredukujmy problem z Twierdzenia \ref{tw:twierdzenie1} dotycz\k{a}cego synchronizowalno\'{s}ci automatu do problemu zasi\k{e}gu w podautomacie $P^{[2]}(\mathscr{A})$ automatu mocy $P(\mathscr{A})$, kt\'{o}rego zbi\'{o}r stan\'{o}w jest z{\l}o\.{z}ony z jednoelementowych oraz dwuelementowych podzbior\'{o}w zbioru $Q$. Podautomat posiada $\frac{|Q|(|Q|+1)}{2}$ stan\'{o}w. Algorytm BFS, czyli przeszukiwanie grafu wszerz, rozwi\k{a}zuje ten problem w czasie $O(|Q|^2*|\Sigma|)$. To ograniczenie pozwala wnioskowa\'{c}, i\.{z} je\'{s}li s{\l}owo resetuj\k{a}ce nie istnieje dostaniemy o tym stosown\k{a} informacj\k{e} w sko\'{n}czonej jednostce czasu, kt\'{o}rej wielko\'{s}\'{c} zale\.{z}y od rozmiaru zbioru stan\'{o}w oraz alfabetu. Je\'{s}li natomiast automat $\mathscr{A}$ jest synchroniczny, jako wynik algorytmu wyprodukowane zostanie s{\l}owo resetuj\k{a}ce ten automat. Najlepszy znany algorytm, kt\'{o}ry jako wynik daje s{\l}owo resetuj\k{a}ce posiada z{\l}o\.{z}ono\'{s}\'{c} czasow\k{a} rz\k{e}du $O(|Q|^3+|Q|^2*|\Sigma|)$ oraz z{\l}o\.{z}ono\'{s}\'{c} pami\k{e}ciow\k{a} rz\k{e}du $O(|Q|^2*|\Sigma|)$, nie licz\k{a}c pami\k{e}ci potrzebnej na zapisanie wyniku, kt\'{o}ra jest rz\k{e}du $O(|Q|^3)$.
+
+
+%% SEKCJA 5 Problem długości słowa synchronizującego
+\newpage
+\section{Problem d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego.}
+
+Automat mocy synchronicznego automatu mo\.ze by\'c u\.zyteczny w konstruowaniu najkr\'otszych s{\l}\'ow resetuj\k{a}cych, co jest zwi\k{a}zane z najkr\'otsz\k{a} \'scie\.zk\k{a} w automacie mocy od ca{\l}ego zestawu stan\'ow, a\.z do singletona. Oczywi\'scie w najgorszym przypadku wymaga to wyk{\l}adniczgo czasu. Niemniej jednak by{\l}y pr\'oby zaimplemetowania tego podej\'scia. Mo\.zna mie\'c nadziej\k{e}, \.ze odpowiednie obliczenia dla "wielomianowego" subautomatu $P^{[2]}(\mathscr{A})$ pozwol\k{a} uzyska\'c algorytm wielomianowy. Jednak, ma{\l}o prawdopodobne jest to, \.ze istnieje jakikolwiek rozs\k{a}dny algorytm znajdowania najkr\'otszego s{\l}owa resetuj\k{a}cego w przypadku og\'olnym.\\ 
+\\
+Rozwa\.zmy teraz dwa nast\k{e}puj\k{a}ce problemy:
+
+%% Problem 4.1
+\begin{pro}
+(Kr\'otkie s{\l}owo resetuj\k{a}ce.) Maj\k{a}c automat synchroniczny  $\mathscr{A}=(Q, \Sigma, \delta)$ i liczb\k{e} naturaln\k{a} $l$, czy prawd\k{a} jest to, \.ze $\mathscr{A}$ posiada s{\l}owo resetuj\k{a}ce o d{\l}ugo\'sci $l$?
+\end{pro}
+
+%% Problem 4.2
+\begin{pro} (Najkr\'otsze s{\l}owo resetuj\k{a}ce.) Maj\k{a}c automat synchroniczny  $\mathscr{A}=(Q, \Sigma, \delta)$ i liczb\k{e} naturaln\k{a} $l$, czy prawd\k{a} jest to, \.ze minimalna  d{\l}ugo\'s\'c s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ jesr r\'owna $l$?
+\end{pro}
+
+Oczywi\'scie problem 3.1 nale\.zy do klasy z{\l}o\.zono\'sci NP; mo\.zna nie -deterministycznie odgadn\k{a}\'c s{\l}owo $w\in\Sigma$ o d{\l}ugo\'sci $l$, a nast\k{e}pnie sprawdzi\'c czy $w$ jest s{\l}owem resetuj\k{a}cym automat $\mathscr{A}$ w czasie $l|\mathscr{Q}|$. Eppstein udowodni{\l}, \.ze problem 3.1 jest NP-trudny przez wielomianow\k{a} redukcj\k{e} z problemu NP-zupe{\l}nego. Dlatego problem 3.1 jest NP-zupe{\l}ny. Z dowodu tego {\l}atwo wynika, \.ze problem 3.2 jest NP-trudny. Wojciech Samotij pokaza{\l}, \.ze negacja NP-zupe{\l}no\'sci mo\.ze by\'c wielomianowo zredukowana do problemu 3.2, sk\k{a}d ostatni problem r\'ownie\.z jest coNP-trudny. Jako konsekwencja problem 3.2 nie mo\.ze nale\.ze\'c do klasy NP je\.zeli nieprawd\k{a} jest, \.ze NP=coNP, co jest powszechnie uwa\.zane za ma{\l}o prawdopodobne. Innymi s{\l}owy, nawet nie-deterministyczny algorytm nie mo\.ze znale\'z\'c minimalnej d{\l}ugo\'sci s{\l}owa resetuj\k{a}cego dla danego automatu synchronicznego w czasie wielomianowym.
+
+
+%% SEKCJA 6 Hipoteza Cernego
+\newpage
+\section{Hipoteza \v Cernego.}
+
+W tym rozdziale om\'{o}wimy otwarty do tej pory problem i wyniki, zwi\k{a}zane z nast\k{e}puj\k{a}cym pytaniem: posiadaj\k{a}c zadane $n \in N$ jak d{\l}ugie mo\.ze by\'c s{\l}owo resetuj\k{a}ce sko\'nczony automat synchroniczny o $n$ stanach? 
+
+Przywo{\l}ajmy najpierw konstrukcj\k{e} \v Cernego. Dla liczby naturalnej $n>1$ oznaczmy $C_{n}$ jako sko\'nczony automat synchroniczny, kt\'orego stany s\k{a} resztami modulo $n$, a litery wej\'sciowe $a$ i $b$ dzia{\l}aj\k{a} nast\k{e}puj\k{a}co:\\
+\\
+$\delta(0,a)=1$\\
+$\delta(m,a)=m$ for $0<m<n$\\
+$\delta(m,b)=m+1(modn)$
+%% Rysunek 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{rysunek7}
+    \caption{Automat $C_{n}$}
+    \label{fig:rysunek7}
+\end{figure}
+
+\v Cerny udowodni{\l}, \.ze $C_{n}$ jest automatem synchronicznym i najkr\'otszym resetuj\k{a}cym go s{\l}owem jest $(ab^{n-1})^{n-2}a$ o d{\l}ugo\'sci $(n-1)^{2}$. Zatem je\'sli zdefiniujemy funkcj\k{e} \v Cernego $C(n)$ jako maksimum d{\l}ugo\'sci najkr\'otszego s{\l}owa resetuj\k{a}cego automat synchroniczny posiadaj\k{a}cy $n$ stan\'ow powy\.zsza w{\l}asno\'s\'c dla ci\k{a}gu $\{C_{n}\}_{n=2,3,\ldots}$ daje nier\'owno\'s\'c: $C(n)\leq(n-1)^{2}$. Hipoteza \v Cernego m\'owi \.ze tak naprawd\k{e} zachodzi r\'owno\'s\'c: $C(n)=(n-1)^{2}$. W literaturze mo\.zna spotka\'c nawi\k{a}zania do tego,\.ze praca \v Cernego z 1964 roku jest \'zr\'od{\l}em tej hipotezy, ale tak naprawd\k{e} nie zosta{\l}a ona wtedy sformu{\l}owana. Jedkak\.ze \v Cerny zaobserwowa{\l}, \.ze: $(n-1)^{2}\leq C(n)\leq2^{n}-n-1$ i za{\l}\k{a}czy{\l} do tego nast\k{e}puj\k{a}c\k{a} uwag\k{e}: "R\'o\.znica pomi\k{e}dzy granicami wzrasta szybko i nale\.zy je zacie\'sni\'c. Mo\.zna si\k{e} spodziewa\'c polepszenia g{\l}\'ownie dla g\'ornej granicy."
+
+Hipoteza w swej obecnej postaci zosta{\l}a sformu{\l}owana troch\k{e} p\'ozniej, po tym jak oczekiwania zawarte w powy\.zszym cytacie zosta{\l}y potwierdzone przez Peter'a Starke'a, kt\'ory pomniejszy{\l} g\'orn\k{a} granic\k{e} do $1+\frac{n(n-1)(n-2)}{2}$, co by{\l}o pierwsz\k{a} wielomianow\k{a} g\'orn\k{a} granic\k{a} dla $C(n)$. \v Cerny wypowiedzia{\l} hipotez\k{e} $C(n)=(n-1)^{2}$ na Konferencji Cybernetycznej  w Bratys{\l}awie w 1969 roku, natomiast w druku hipoteza pojawi{\l}a si\k{e} po raz pierwszy w 1971 roku.
+
 
 %% SEKCJA 7 Oszacowanie długości słowa synchronizującego z dowodem
+\newpage
 \section{Oszacowanie d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego.}
 
+W rozdziale sz\'ostym przedstawiona zosta{\l}a tre\'s\'c hipotezy \v Cernego oraz pewne g\'orne oszacowania funkcji $C_{n}$, kt\'ore z  biegiem czasu stawa{\l}y si\k{e} coraz dok{\l}adniejsze. Najdok{\l}adniejsze znane g\'orne ograniczenie funkcji \v Cernego gwarantuje to, \.ze dla ka\.zdego automatu synchronicznego posiadaj\k{a}cego $n$ stan\'ow istnieje s{\l}owo resetuj\k{a}ce o d{\l}ugo\'sci $\frac{n^{3}-n}{6}$.
 
 \end{document}
 
