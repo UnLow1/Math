@@ -239,7 +239,29 @@ Hipoteza w swej obecnej postaci zosta{\l}a sformu{\l}owana troch\k{e} p\'ozniej,
 \newpage
 \section{Oszacowanie d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego.}
 
-W rozdziale sz\'ostym przedstawiona zosta{\l}a tre\'s\'c hipotezy \v Cernego oraz pewne g\'orne oszacowania funkcji $C_{n}$, kt\'ore z  biegiem czasu stawa{\l}y si\k{e} coraz dok{\l}adniejsze. Najdok{\l}adniejsze znane g\'orne ograniczenie funkcji \v Cernego gwarantuje to, \.ze dla ka\.zdego automatu synchronicznego posiadaj\k{a}cego $n$ stan\'ow istnieje s{\l}owo resetuj\k{a}ce o d{\l}ugo\'sci $\frac{n^{3}-n}{6}$.
+W rozdziale sz\'ostym przedstawiona zosta{\l}a tre\'s\'c hipotezy \v Cernego oraz pewne g\'orne oszacowania funkcji $C_{n}$, kt\'ore z  biegiem czasu stawa{\l}y si\k{e} coraz dok{\l}adniejsze. Najdok{\l}adniejsze znane g\'orne ograniczenie funkcji \v Cernego gwarantuje to, \.ze dla ka\.zdego automatu synchronicznego posiadaj\k{a}cego $n$ stan\'ow istnieje s{\l}owo resetuj\k{a}ce o d{\l}ugo\'sci $\frac{n^{3}-n}{6}$. Takie s{\l}owo resetuj\k{a}ce powstaje w wyniku nast\k{e}puj\k{a}cego algorytmu.\\
+
+
+\textbf{Algorytm 7.1}\\ 
+\textbf{wej\'scie}: $\mathscr{A}=(Q, \Sigma, \delta)$\\
+\textbf{inicjalizacja}: \\
+$w\leftarrow 1$\\ 
+$P\leftarrow Q$\\
+\textbf{je\'sli} $|P|>1$ to znajd\'z s{\l}owo $v\in\Sigma^{*}$ o minimalnej d{\l}ugo\'sci takie, \.ze $|\delta(P,v)|<|P|$;\\
+je\'sli takie s{\l}owo nie istnieje \textbf{zwr\'o\'c}: brak;\\
+$w\leftarrow wv$\\ 
+$P\leftarrow \delta(P,v)$\\
+\textbf{zwr\'o\'c}: w;\\
+
+ 
+Je\'sli $|Q|=n$ to p\k{e}tla g{\l}\'owna algorytmu 7.1 jest wykonywana co najwy\.zej $n-1$ razy. W celu oszacowania d{\l}ugo\'sci s{\l}owa wyj\'sciowego $w$ musimy estymowa\'c d{\l}ugo\'s\'c ka\.zdego s{\l}owa $v$ uzyskanego w  p\k{e}tli g{\l}\'ownej. 
+Rozwa\.my og\'olny krok, w kt\'orym $|P|=k>1$ i za{\l}\'o\.zmy \.ze $v=a_{1}\ldots a_{l}$, gdzie $a_{i}\in \Sigma, i=1,\ldots, l$. {\L}atwo zauwa\.zy\'c, \.ze zbiory $P_{1}=P, P_{2}=\delta(P_{1},a_{1}),\ldots, P_{l}=\delta(P_{l-1},a_{l-1})$ s\k{a} $k$-elementowymi podzbiorami $Q$. Ponadto je\'sli $|\delta(P_{l},a_{l})|<|P_{l}|$, to istniej\k{a} dwa stany $q_{l},q'_{l}\in P_{l}$ takie, \.ze $\delta(q_{l},a_{l})=\delta(q'_{l},a_{l})$. Teraz zdefiniujmy  $2$-elementowe podzbiory $R_{i}=\{q_{i},q'_{i}\}\subseteq P_{i}, i=1,\ldots,l$ takie, \.ze $\delta(q_{i},a_{i})=q_{i+1}, \delta(q'_{i},a_{i})=q'_{i+1}, i=1,\ldots,l-1$. Teraz warunek m\'owi\k{a}cy, \.ze $v$ jest s{\l}owem o minimalnej d{\l}ugo\'sci z $|\delta(P,v)|<|P|$ implikuj\k{a} $R_{i}\not\subseteq P_{j}$ dla $1\leq j<i\leq l$. Dochodzimy do poni\.zszego, kombinatorycznego problemu.
+
+\begin{pro}
+Niech $Q$ b\k{e}dzie $n$-elementowym zbiorem, $P_{1},\ldots,P_{l}$ ci\k{a}giem $k$-elementowych podzbior\'ow zbioru $Q$ (k>1), a $R_{1},\ldots,R_{l}$ ci\k{a}giem $2$-elementowych podzbiorów zbioru $Q$. Przypu\'s\'cmy $R_{i}\subseteq P_{i}$ dla ka\.zdego $i=1,\ldots,l$, ale $R_{i}\not\subseteq P_{j}$ dla $1\leq j<i\leq l$. Jak du\.za liczba $l$ mo\.ze by\'c?
+\end{pro}
+
+Problem 7.1 zosta{\l} rozwi\k{a}zany przez Petera Frankla w 1982 roku, kt\'ory znalaz{\l} ostr\k{a} granic\k{e} $l\leq$ ${n-k+2}\choose{2}$. Sumuj\k{a}c te nier\'owno\'sci od $k=n$ do $k=2$ uzyskujemy wcze\'sniej wspominane ograniczenie $C(n)\leq\frac{n^{3}-n}{6}$
 
 \end{document}
 
