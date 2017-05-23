@@ -6,11 +6,13 @@
 \usepackage{mathtools}
 \usepackage{float}
 \usepackage{mathrsfs}
+\usepackage{amsfonts}
 
 \newtheorem{df}{Definicja}[section]
 \newtheorem{pr}{Przyk{\l}ad}[section]
 \newtheorem{twr}{Twierdzenie}[section]
 \newtheorem{pro}{Problem}[section]
+\newtheorem{dw}{Dow\'od}[section]
 
 \begin{document}
 
@@ -254,14 +256,24 @@ $P\leftarrow \delta(P,v)$\\
 \textbf{zwr\'o\'c}: w;\\
 
  
-Je\'sli $|Q|=n$ to p\k{e}tla g{\l}\'owna algorytmu 7.1 jest wykonywana co najwy\.zej $n-1$ razy. W celu oszacowania d{\l}ugo\'sci s{\l}owa wyj\'sciowego $w$ musimy estymowa\'c d{\l}ugo\'s\'c ka\.zdego s{\l}owa $v$ uzyskanego w  p\k{e}tli g{\l}\'ownej. 
-Rozwa\.my og\'olny krok, w kt\'orym $|P|=k>1$ i za{\l}\'o\.zmy \.ze $v=a_{1}\ldots a_{l}$, gdzie $a_{i}\in \Sigma, i=1,\ldots, l$. {\L}atwo zauwa\.zy\'c, \.ze zbiory $P_{1}=P, P_{2}=\delta(P_{1},a_{1}),\ldots, P_{l}=\delta(P_{l-1},a_{l-1})$ s\k{a} $k$-elementowymi podzbiorami $Q$. Ponadto je\'sli $|\delta(P_{l},a_{l})|<|P_{l}|$, to istniej\k{a} dwa stany $q_{l},q'_{l}\in P_{l}$ takie, \.ze $\delta(q_{l},a_{l})=\delta(q'_{l},a_{l})$. Teraz zdefiniujmy  $2$-elementowe podzbiory $R_{i}=\{q_{i},q'_{i}\}\subseteq P_{i}, i=1,\ldots,l$ takie, \.ze $\delta(q_{i},a_{i})=q_{i+1}, \delta(q'_{i},a_{i})=q'_{i+1}, i=1,\ldots,l-1$. Teraz warunek m\'owi\k{a}cy, \.ze $v$ jest s{\l}owem o minimalnej d{\l}ugo\'sci z $|\delta(P,v)|<|P|$ implikuj\k{a} $R_{i}\not\subseteq P_{j}$ dla $1\leq j<i\leq l$. Dochodzimy do poni\.zszego, kombinatorycznego problemu.
+Je\'sli $|Q|=n$ to p\k{e}tla g{\l}\'owna algorytmu 7.1 jest wykonywana co najwy\.zej $n-1$ razy. Dzieje si\k{e} tak w  przypadku gdy w każdej iteracji $|P|-|\delta(P,v)|=1$. W celu oszacowania d{\l}ugo\'sci s{\l}owa wyj\'sciowego $w$ musimy estymowa\'c d{\l}ugo\'s\'c ka\.zdego s{\l}owa $v$ uzyskanego w  p\k{e}tli g{\l}\'ownej. 
+Rozwa\.my og\'olny krok, w kt\'orym $|P|=k>1$ i za{\l}\'o\.zmy \.ze $v=a_{1}\ldots a_{l}$, gdzie $a_{i}\in \Sigma, i=1,\ldots, l$. {\L}atwo zauwa\.zy\'c, \.ze zbiory $P_{1}=P, P_{2}=\delta(P_{1},a_{1}),\ldots, P_{l}=\delta(P_{l-1},a_{l-1})$ s\k{a} $k$-elementowymi podzbiorami $Q$. Ponadto je\'sli $|\delta(P_{l},a_{l})|<|P_{l}|$, to istniej\k{a} dwa stany $q_{l},q'_{l}\in P_{l}$ takie, \.ze $\delta(q_{l},a_{l})=\delta(q'_{l},a_{l})$. Teraz zdefiniujmy  $2$-elementowe podzbiory $R_{i}=\{q_{i},q'_{i}\}\subseteq P_{i}, i=1,\ldots,l$ takie, \.ze $\delta(q_{i},a_{i})=q_{i+1}, \delta(q'_{i},a_{i})=q'_{i+1}, i=1,\ldots,l-1$. Dla $1\leq i<j\leq l$ $R_{j}\not\subseteq P_{i}$, poniewa\.z wprzeciwnym przypadku istnia{\l}oby s{\l}owo $v'=a_{1}\cdot\ldots\cdot a_{i-1}a_{j}\cdot\ldots\cdot a_{l}$ takie, \.ze $|\delta(P_{k},v')|<|P_{k}|$, co jest sprzeczne z  minimaln\k{a} d{\l}ugo\'sci\k{a} s{\l}owa $v$. Dochodzimy do poni\.zszego, kombinatorycznego problemu.
 
 \begin{pro}
-Niech $Q$ b\k{e}dzie $n$-elementowym zbiorem, $P_{1},\ldots,P_{l}$ ci\k{a}giem $k$-elementowych podzbior\'ow zbioru $Q$, $(k>1)$, a $R_{1},\ldots,R_{l}$ ci\k{a}giem $2$-elementowych podzbiorów zbioru $Q$. Przypu\'s\'cmy $R_{i}\subseteq P_{i}$ dla ka\.zdego $i=1,\ldots,l$, ale $R_{i}\not\subseteq P_{j}$ dla $1\leq j<i\leq l$. Jak du\.za liczba $l$ mo\.ze by\'c?
+Niech $Q$ b\k{e}dzie $n$-elementowym zbiorem, $P_{1},\ldots,P_{l}$ ci\k{a}giem $k$-elementowych podzbior\'ow zbioru $Q$, $(k>1)$, a $R_{1},\ldots,R_{l}$ ci\k{a}giem $2$-elementowych podzbiorów zbioru $Q$. Przypu\'s\'cmy $R_{i}\subseteq P_{i}$ dla ka\.zdego $i=1,\ldots,l$, ale $R_{j}\not\subseteq P_{i}$ dla $1\leq i<j\leq l$. Jak du\.za liczba $l$ mo\.ze by\'c?
 \end{pro}
 
-Problem 7.1 zosta{\l} rozwi\k{a}zany przez Petera Frankla w 1982 roku, kt\'ory znalaz{\l} ostr\k{a} granic\k{e} $l\leq$ ${n-k+2}\choose{2}$. Sumuj\k{a}c te nier\'owno\'sci od $k=n$ do $k=2$ uzyskujemy wcze\'sniej wspominane ograniczenie $C(n)\leq\frac{n^{3}-n}{6}$
+Problem 7.1 zosta{\l} rozwi\k{a}zany przez Petera Frankla w 1982 roku, kt\'ory udowodni{\l} nast\k{e}puj\k{a}ce twierdzenie: 
+
+\begin{twr} 
+Niech $A_{1},\ldots,A_{m}$ b\k{e}dzie ci\k{a}giem zbior\'ow o mocy $r$, a $B_{1},\ldots,B_{m}$ b\k{e}dzie ci\k{a}giem zbior\'ow o mocy $s$, spe{\l}niaj\k{a}cych: $A_{i}\cap B_{i}=\emptyset$ dla $i=1,\ldots,m$ oraz $A_{i}\cap B_{j}\neq\emptyset$ dla $i<j$. Wtedy $m\leq$ ${r+s}\choose{s}$.
+\end{twr} 
+
+\begin{dw}
+Oznaczamy $X=\bigcup_{i=1}^{m} (A_i \cup B_{i})$. X jest zbiorem sko\'nczonym. Wybieramy zbi\'r $V\in\mathbb{R}^{r+1}$, taki \.ze $|V|=|X|$ oraz spe{\l}niony jest warunek: ka\.zde $r+1$ wektor\'ow z $V$ s\k{a} liniowo niezale\.zne. Nast\k{e}pnie ka\.zdy element zbioru $X$ nale\.zy powi\k{a}za\'c z odpowiednim elementem zbioru $V$, dzi\k{e}ki czemu zbiory $A_{i}$ oraz $B_{i}$ mo\.zna rozwa\.za\'c jako podzbiory V. Teraz dla ka\.zdego $j$ zdefiniujmy wielomian $f_{j}(x)=\prod_{v\in B_{j}}<v,x>$ powi\k{a}zany ze zbiorem $B_{j}$, gdzie $x=(x_{1},\ldots,x_{r+1})$. Skoro $A_{i}$ sk{\l}ada si\k{e} z $r$ liniowo niezale\.znych wektor\'ow, to pow{\l}oka liniowa $A_{i}$ ma wymiar $r$. Dla ka\.zdego $i$ wybieramy wektor normalny przestrzeni $spanA_{i}$. Oznaczmy go $y_{i}$. Wektor $y_{i}$ jest prostopad{\l}y do przestrzeni $spanA_{i}$, wi\k{e}c $<v,y_{i}>=0$, je\'sli tylko $v\in spanA_{i}$. Poka\.zemy \.ze $v\in spanA_{i}$, je\'sli $v\in A_{i}$. Przyp\'s\'cmy, \.ze $v\in spanA_{i}$, ale $v\notin A_{i}$. Zauwa\.zmy \.ze $span(A_{i}\cup\{v\})=spanA_{i}$, gdzie $spanA_{i}$ ma wymiar $r$. Zatem $span(A_{i}\cup\{v\})$ r\'ownie\.z ma wymiar $r$, co jest sprzeczne z za{\l}o\.zeniem, \.ze dowolne $r+1$ wektor\'ow z $V$ s\k{a} liniowo niezale\.zne. Mamy zatem \.ze $<v,y_{i}>=0$, je\'sli $v\in A_{i}$. Wiemy zatem, \.ze $f_j(y_{i})=0$ je\'sli $<v,y_{i}>=0$ dla pewnego $v\in B_{j}$. Ponadto $<v,y_{i}>=0$ dla pewnego $v\in B_{j}$, je\'sli $v\in B_{j}$ i $v\in A_{i}$, co zachodzi w przypadku, gdy $A_{i}\cap B_{j}\neq\emptyset$. Z za{\l}o\.ze\'n wiemy, \.ze $A_{i}\cap B_{j}\neq\emptyset$ dla $i<j$ oraz $A_{i}\cap B_{j}=\emptyset$ dla $i=j$. Zatem $f_{j}(y_{i})=0$ dla $i<j$ oraz $f_{j}(y_{i})\neq0$ dla $i=j$. Teraz poka\.zemy, \.ze $\{f_{j}\}_{j=1}^{m}$ tworz\k{a} uk{\l}ad liniowo niezale\.zny. Przypu\'s\'cmy, \.ze tak nie jest. Istnieje zatem $k$, takie \.ze: $c_{1}f_{1}+\ldots+c_{m}f_{m}=0$ i $c_{k}\neq0$. Rozwa\.zmy warto\'s\'c powy\.zszej kombinacji liniowej na wektorze $y_{k}$: $c_{1}f_{1}(y_{k})+\ldots+c_{k}f_{k}(y_{k})+\ldots+c_{m}f_{m}(y_{k})=0$. $\forall i$ $i<k$: $f_{i}(y_{k})=0$. Poza tym, na podstawie powy\.zszych rozwa\.za\'n mamy: $\forall i$ $i>k$: $f_{i}(y_{k})=0$. Tym samym z r\'ownania znikaj\k{a} wszystkie sk\'ladniki, poza jednym. Otrzymujemy $c_{k}f_{k}(y_{k})=0$. Ale wiemy \.ze $f_{k}(y_{k})\neq0$. Zatem $c_{k}=0$, co jest sprzeczne  z za{\l}o\.zeniem $c_{k}\neq0$.Udowodnili\'smy, \.ze $\{f_{j}\}_{j=1}^{m}$ tworz\k{a} uk{\l}ad liniowo niezale\.zny. Teraz musimy ogarniczy\'c wymiarpodprzestrzeni zawieraj\k{a}cej $\{f_{j}\}_{j=1}^{m}$. Dla ka\.zdego $j$ wszystkie jednomiany wielomianu $f_{j}$ maj\k{a} stopie\'n $s$ i tworz\k{a} baz\k{e} tej podprzestrzeni. Ka\.dy jednomian stopnia $s$ ma posta\'c $x_{1}^{l_{1}}\cdot\ldots\cdot x_{r+1}^{l_{r+1}}$, gdzie $l_{1}+\ldots+l_{r+1}=s$. Musimy teraz odpowiedzie\'c na nast\k{e}puj\k{a}ce pytanie: jak du\.zo r\'o\.znych jednomian\'ow tej postaci istnieje? Rozwi\k{a}zaniem tego problemu dla nieujemnych $l_{1},\ldots,l_{r+1}$ jest liczba ${r+s}\choose{s}$. Zatem $\{f_{j}\}_{j=1}^{m}$ jest uk{\l}adem $m$-liniowo niezale\.znych element\'ow, zawartym w przestrzeni o wymiarze mniejszym b\k{a}d\'z r\'ownym ${r+s}\choose{s}$. Otrzymujemy tez\k{e} twierdzenia: $m\leq$ ${r+s}\choose{s}$.
+\end{dw}
+
+Teraz tez\k{e} twierdzenia 7.1, wykorzystujemy do rozwi\k{a}zania problemu 7.1. Skoro dla ka\.zdego $i$ $R_{i}\subseteq P_{i}$ to $\forall i$ $(Q-P_{i})\cap R_{i}=\emptyset$ oraz $|Q-P_{i}|=n-k$. Ponadto je\.zeli $R_{j}\not\subseteq P_{i}$ dla $1\leq i<j\leq l$, to dla $1\leq i<j\leq l$ zachodzi $(Q-P_{i})\cap R_{j}\neq\emptyset$. Przyjmujemy: $A_{i}=Q-P_{i}$, $r=n-k$, $B_{i}=R_{i}$, $s=2$, $m=l$ i podstawiaj\k{a}c do wzoru otrzymanego w twierdzeniu otrzymujemy: $l\leq$ ${n-k+2}\choose{2}$. Wiemy, \.ze p\k{e}tla algorytmu wykona si\k{e} maksymalnie $n-1$ razy w wyniku czego otrzymamy s{\l}owo resetuj\k{a}ce postaci: $w=w_{1}\ldots w_{n-1}$. Zatem, aby dosta\'c g\'orne ograniczenie d{\l}ugo\'sci s{\l}owa resetuj\k{a}cego nale\.zy posumowa\'c $l\leq$ ${n-k+2}\choose{2}$ po $k=2,..,n$. Ostatecznie mamy: $\sum_{k=2}^{n}$${n-k+2}\choose{2}$$=\frac{n^{3}-n}{6}$.
 
 \end{document}
 
