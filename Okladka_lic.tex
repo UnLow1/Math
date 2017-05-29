@@ -7,6 +7,7 @@
 \usepackage{float}
 \usepackage{mathrsfs}
 \usepackage{amsfonts}
+\usepackage{enumerate}
 
 \newtheorem{df}{Definicja}[section]
 \newtheorem{pr}{Przyk{\l}ad}[section]
@@ -27,7 +28,7 @@
 \section{Podstawowe definicje.}
 %% def 1.1
 \begin{df} 
-Grafem nazywamy $G=(V,E)$, gdzie $V$ jest niepustym zbiorem, kt\'orego elementy zwane s\k{a} wierzcho{\l}kami a $E$ jest rodzin\k{a} dwuelemntowych podzbior\'ow zbioru $V$, zwanych kraw\k{e}dziami.
+Grafem nazywamy par\k{e} $G=(V,E)$, gdzie $V$ jest niepustym zbiorem, kt\'orego elementy zwane s\k{a} wierzcho{\l}kami, a $E$ jest rodzin\k{a} dwuelementowych podzbior\'ow zbioru $V$, zwanych kraw\k{e}dziami.
 $E=\{vw : v,w\in V \}$.
 \end{df}
 %% def 1.2
@@ -52,20 +53,48 @@ Kraw\k{e}dzi\k{a} skierowan\k{a} lub {\l}ukiem grafu $G=(V,E)$ nazywamy uporz\k{
 \end{df}
 %% def 1.7
 \begin{df} 
-Niech $G=(V,E)$ b\k{e}dzie grafem. Ci\k{a}g wierzcho{\l}k\'ow $(v_{1},\ldots,v_{n})$, taki \.ze $\forall_{i}$ $v_{i}\in V$ oraz  $(v_{i-1},v_{i})\in E$ dla $i=2,\ldots,n$ nazywamy \'scie\.zk\k{a} w grafie $G$.
-\end{df} 
+Graf sk{\l}adaj\k{a}cy si\k{e} tylko z kraw\k{e}dzi skierowanych nazywamy grafem skierowanym.
+\end{df}
 %% def 1.8
+\begin{df} 
+Niech $G=(V,E)$ b\k{e}dzie grafem skierowanym. Ci\k{a}g wierzcho{\l}k\'ow $(v_{1}, \ldots, v_{n})$, taki \.ze $\forall_{i}$ $v_{i}\in V$ oraz  $(v_{i-1}, v_{i}) \in E$ dla $i=2, \ldots, n$ nazywamy \'scie\.zk\k{a} w grafie $G$.
+\end{df} 
+%% def 1.9
 \begin{df} 
 Graf $G$ jest sp\'ojny je\'sli dowolne dwa jego wierzcho{\l}ki s\k{a} po{\l}\k{a}czone \'scie\.zk\k{a}.
 \end{df}
-%% def 1.9
+%% def 1.10
 \begin{df} 
-Automatem nazywamy tr\'{o}jk\k{e} $\mathscr{A}=(Q, \Sigma, \delta)$, gdzie Q jest zbiorem mo\.{z}liwych stan\'{o}w, $\Sigma$ jest alfabetem, natomiast $\delta:Q x \Sigma \rightarrow$ Q jest funkcj\k{a} definiuj\k{a}c\k{a} 	zachowanie si\k{e} litery nale\.{z}\k{a}cej do alfabetu $\Sigma$ w stanie Q.
+Automatem nazywamy tr\'{o}jk\k{e} $\mathscr{A}=(Q, \Sigma, \delta)$, gdzie Q jest zbiorem mo\.{z}liwych stan\'{o}w, $\Sigma$ jest alfabetem, natomiast $\delta:Q x \Sigma \rightarrow$ Q jest funkcj\k{a} okre\'{s}laj\k{a}c\k{a} zachowanie si\k{e} automatu pod wp{\l}ywem litery nale\.{z}\k{a}cej do alfabetu $\Sigma$ w stanie Q.
+\end{df}
+%% def 1.11
+\begin{df} 
+S{\l}owem resetuj\k{a}cym lub synchronizuj\k{a}cym nazywamy s{\l}owo $\omega \in \Sigma$ takie, \.{z}e dla dowolonych stan\'{o}w $q, q' \in Q$ automatu $\mathscr{A}=(Q, \Sigma, \delta)$ zachodzi $\delta(q,w)=\delta(q',w)$
+\end{df}
+%% def 1.11
+\begin{df} 
+Automat $\mathscr{A}=(Q, \Sigma, \delta)$ nazywamy synchronicznym je\'{s}li istnieje s{\l}owo $\omega \in \Sigma$ synchronizuj\k{a}ce ten automat.
+\end{df}
+%% def 1.12
+\begin{df}
+Przestrzeni\k{a} liniow\k{a} lub wektorow\k{a} nad cia{\l}em $K$ nazywamy $(V, +, *)$, gdzie $V$ jest niepustym zbiorem oraz spe{\l}nia nast\k{e}puj\k{a}ce warunki:
+\begin{enumerate}[I.]
+\item $\forall_{u, v, w \in V} u + (v + w) = (u + v) + w$
+\item $\forall_{v, w \in V} v + w = w + v$
+\item $\exists_{0 \in V} \forall_{v \in V} v + 0 = v$
+\item $\forall_{v \in V} \exists_{w \in V} v + w = 0$
+\item $\forall_{\alpha \in K} \forall_{v, w \in V} \alpha(v + w) = \alpha v + \alpha w$
+\item $\forall_{\alpha, \beta \in K} \forall_{v \in V} (\alpha + \beta)v = \alpha v + \beta v$
+\item $\forall_{\alpha, \beta \in K} \forall_{v \in V} \alpha(\beta v) = (\alpha*\beta)v$
+\item $\exists_{1 \in K} \forall_{v \in V} 1v = v$
+\end{enumerate}
+\end{df}
+%% def 1.13
+\begin{df}
+Wektory $v_{1}, v_{2}, \dots, v_{n}$ s\k{a} liniowo niezale\.{z}ne wtedy i tylko wtedy, gdy $\forall_{\alpha_{1}, \alpha_{2}, \dots, \alpha_{n} \in \Re} \alpha_{1}v_{1} + \alpha_{2}v_{2} + \dots + \alpha_{n}v_{n} = 0 => \alpha_{1} = \alpha_{2} = \dots = \alpha_{n} = 0$
 \end{df}
 
-
 %% SEKCJA 2 Wprowadzenie do problemu
-\newpage
 \section{Wprowadzenie do problemu. Przyk{\l}ady zastosowa\'{n}.}
 
 %%Przykład 2.1
@@ -102,7 +131,7 @@ W tym automacie mamy tyle samo stan\'{o}w co w Przyk{\l}adzie \ref{pr:przyklad1}
     \label{fig:rysunek2}
 \end{figure}
 
-Rozwa\.{z}aj\k{a}c s{\l}owo \textit{acb} szybko stwierdzimy, \.{z}e jest ono s{\l}owem resetuj\k{a}cym automat przedstawiony na Rysunku \ref{fig:rysunek2}.\\
+Rozwa\.{z}aj\k{a}c s{\l}owo \textit{acb} stwierdzimy, \.{z}e jest ono s{\l}owem resetuj\k{a}cym automat przedstawiony na Rysunku \ref{fig:rysunek2}.\\
 \\
 \textbf{00}$\xrightarrow{a}$01$\xrightarrow{c}$01$\xrightarrow{b}$\textbf{00}\\
 \textbf{01}$\xrightarrow{a}$01$\xrightarrow{c}$01$\xrightarrow{b}$\textbf{00}\\
@@ -156,44 +185,50 @@ Jak wida\'{c} nawet dla ma{\l}o skomplikowanego automatu synchronicznego mo\.{z}
 
 
 %% SEKCJA 3 Algorytm znajdowania słowa sychronizującego
-\newpage
 \section{Algorytm znajdowania s{\l}owa synchronizuj\k{a}cego.}
 
-Za{\l}\'{o}\.{z}my, \.{z}e mamy dany automat  $\mathscr{A}=(Q, \Sigma, \delta)$. Konstruujemy automat mocy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o}r $P'(Q)$, kt\'{o}ry jest niepustym podzbiorem Q, a funkcja przejscia $\delta$ jest naturalnie rozszerzona do zbioru $P'(Q)x\Sigma$. Inaczej m\'{o}wi\k{a}c dla ka\.{z}dego niepustego podzbioru $P$ zbioru $Q$ oraz $a \epsilon \Sigma$ mamy $\delta(P,a)=\{\delta(p,a) | p\epsilon P\}$.
+Za{\l}\'{o}\.{z}my, \.{z}e mamy dany automat  $\mathscr{A}=(Q, \Sigma, \delta)$. Konstruujemy automat pot\k{e}gowy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o}r $P'(Q)$, kt\'{o}ry jest niepustym podzbiorem Q, a funkcja przejscia $\delta$ jest naturalnie rozszerzona do zbioru $P'(Q)x\Sigma$. Inaczej m\'{o}wi\k{a}c dla ka\.{z}dego niepustego podzbioru $P$ zbioru $Q$ oraz $a \in \Sigma$ mamy $\delta(P,a)=\{\delta(p,a) | p \in P\}$.
 \\
 %% Rysunek 6
 \begin{figure}[H]
     \includegraphics[width=1.1\textwidth]{rysunek6}
-    \caption{Automat mocy}
+    \caption{Automat pot\k{e}gowy}
     \label{fig:rysunek6}
 \end{figure}
 
-Na Rysunku \ref{fig:rysunek6} przedstawiony zosta{\l} automat mocy dla sko\'{n}czonego automatu przedstawionego na Rysunku \ref{fig:rysunek1}. S{\l}owo $w \epsilon \Sigma$ jest s{\l}owem resetuj\k{a}cym automat $\mathscr{A}$ je\'{s}li w $P(\mathscr{A})$ \'{s}cie\.{z}ka wygenerowana przez to s{\l}owo, zaczynaj\k{a}ca si\k{e} w dowolnym stanie $q \epsilon Q$ ko\'{n}czy si\k{e} zawsze w tym samym wierzcho{\l}ku. W naszym przypadku s{\l}owem resetuj\k{a}cym jest ju\.{z} wcze\'{s}niej znalezione s{\l}owo $ab^3ab^3a$, a wierzcho{\l}kiem ko\'{n}cowym - wierzcho{\l}ek $2$. Ponadto jest to najkr\'{o}tsze s{\l}owo resetuj\k{a}ce. 
+Na Rysunku \ref{fig:rysunek6} przedstawiony zosta{\l} automat pot\k{e}gowy dla sko\'{n}czonego automatu przedstawionego na Rysunku \ref{fig:rysunek1}. S{\l}owo $w \in \Sigma$ jest s{\l}owem resetuj\k{a}cym automat $\mathscr{A}$ je\'{s}li w $P(\mathscr{A})$ \'{s}cie\.{z}ka wygenerowana przez to s{\l}owo, zaczynaj\k{a}ca si\k{e} w dowolnym stanie $q \in Q$ ko\'{n}czy si\k{e} zawsze w tym samym wierzcho{\l}ku. W naszym przypadku s{\l}owem resetuj\k{a}cym jest ju\.{z} wcze\'{s}niej znalezione s{\l}owo $ab^3ab^3a$, a wierzcho{\l}kiem ko\'{n}cowym - wierzcho{\l}ek $2$. Ponadto jest to najkr\'{o}tsze s{\l}owo resetuj\k{a}ce. 
 
-Reasumuj\k{a}c algorytm szukania s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ nie jest skomplikowany. W skr\'{o}cie najpierw tworzymy automat mocy $P(\mathscr{A})$, nast\k{e}pnie szukamy s{\l}owa, dzi\k{e}ki kt\'{o}remu startuj\k{a}c z dowolnego stanu dostaniemy si\k{e} do jednego, tego samego wierzcho{\l}ka - mo\.{z}emy tutaj zastosowa\'{c} algorytm przeszukiwania 
-wszerz (BFS), kt\'{o}ry pomo\.{z}e znale\'{z}\'{c} takie s{\l}owo albo stwierdzi\'{c}, i\.{z} ono nie istenieje. Problem jednak w tym, \.{z}e rozmiar automatu mocy $P(\mathscr{A})$ jest wyk{\l}adniczo wi\k{e}kszy od rozmiaru automatu $\mathscr{A}$. Otrzymany w ten spos\'{o}b algorytm ma z{\l}o\.{z}ono\'{s}\'{c} wielomianow\k{a}.
+Reasumuj\k{a}c algorytm szukania s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ nie jest skomplikowany. W skr\'{o}cie najpierw tworzymy automat pot\k{e}gowy $P(\mathscr{A})$, nast\k{e}pnie szukamy s{\l}owa, dzi\k{e}ki kt\'{o}remu startuj\k{a}c z dowolnego stanu dostaniemy si\k{e} do jednego, tego samego wierzcho{\l}ka - mo\.{z}emy tutaj zastosowa\'{c} algorytm przeszukiwania 
+wszerz (BFS), kt\'{o}ry pomo\.{z}e znale\'{z}\'{c} takie s{\l}owo albo stwierdzi\'{c}, i\.{z} ono nie istnieje. Problem jednak w tym, \.{z}e rozmiar automatu pot\k{e}gowego $P(\mathscr{A})$ jest wyk{\l}adniczo wi\k{e}kszy od rozmiaru automatu $\mathscr{A}$. Otrzymany w ten spos\'{o}b algorytm ma z{\l}o\.{z}ono\'{s}\'{c} wielomianow\k{a}.
 
 
 %% SEKCJA 4 WKW na to, żeby graf był synchronizowalny z dowodem
-\newpage
 \section{Warunek konieczny i wystarczaj\k{a}cy na synchronizowalno\'{s}\'{c} automatu.}
 
-Oczywistym faktem jest, \.{z}e nie ka\.{z}dy sko\'{n}czony automat jest synchroniczny. Nasuwa si\k{e} wi\k{e}c pytanie, je\'{s}li mamy dany sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$, jak stwierdzi\'{c} czy jest on synchroniczny czy nie?
+Oczywistym faktem jest, \.{z}e nie ka\.{z}dy sko\'{n}czony automat jest synchroniczny. Poni\.{z}szy rysunek przedstawia jeden z przyk{\l}ad\'{o}w automatu niesychronicznego.
 
-%% Twierdzenie 3.1
+%% Rysunek 8
+\begin{figure}[H]
+    \includegraphics[width=0.7\textwidth]{rysunek8}
+    \caption{Automat niesynchroniczny}
+    \label{fig:rysunek8}
+\end{figure}
+
+Nasuwa si\k{e} wi\k{e}c pytanie, je\'{s}li mamy dany sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$, jak stwierdzi\'{c} czy jest on synchroniczny czy nie?
+
+%% Twierdzenie 4.1
 \begin{twr}
 \label{tw:twierdzenie1}
-Sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$ jest synchroniczny wtedy i tylko wtedy, gdy dla ka\.{z}dego stanu $q, q' \epsilon Q$ istnieje s{\l}owo $w \epsilon \Sigma$ takie, \.{z}e $\delta(q,w)=\delta(q',w)$.
+Sko\'{n}czony automat $\mathscr{A}=(Q, \Sigma, \delta)$ jest synchroniczny wtedy i tylko wtedy, gdy dla dowolnych stan\'{o}w $q, q' \in Q$ istnieje s{\l}owo $w \in \Sigma$ takie, \.{z}e $\delta(q,w)=\delta(q',w)$.
 \end{twr}
 
-Zredukujmy problem z Twierdzenia \ref{tw:twierdzenie1} dotycz\k{a}cego synchronizowalno\'{s}ci automatu do problemu zasi\k{e}gu w podautomacie $P^{[2]}(\mathscr{A})$ automatu mocy $P(\mathscr{A})$, kt\'{o}rego zbi\'{o}r stan\'{o}w jest z{\l}o\.{z}ony z jednoelementowych oraz dwuelementowych podzbior\'{o}w zbioru $Q$. Podautomat posiada $\frac{|Q|(|Q|+1)}{2}$ stan\'{o}w. Algorytm BFS, czyli przeszukiwanie grafu wszerz, rozwi\k{a}zuje ten problem w czasie $O(|Q|^2*|\Sigma|)$. To ograniczenie pozwala wnioskowa\'{c}, i\.{z} je\'{s}li s{\l}owo resetuj\k{a}ce nie istnieje dostaniemy o tym stosown\k{a} informacj\k{e} w sko\'{n}czonej jednostce czasu, kt\'{o}rej wielko\'{s}\'{c} zale\.{z}y od rozmiaru zbioru stan\'{o}w oraz alfabetu. Je\'{s}li natomiast automat $\mathscr{A}$ jest synchroniczny, jako wynik algorytmu wyprodukowane zostanie s{\l}owo resetuj\k{a}ce ten automat. Najlepszy znany algorytm, kt\'{o}ry jako wynik daje s{\l}owo resetuj\k{a}ce posiada z{\l}o\.{z}ono\'{s}\'{c} czasow\k{a} rz\k{e}du $O(|Q|^3+|Q|^2*|\Sigma|)$ oraz z{\l}o\.{z}ono\'{s}\'{c} pami\k{e}ciow\k{a} rz\k{e}du $O(|Q|^2*|\Sigma|)$, nie licz\k{a}c pami\k{e}ci potrzebnej na zapisanie wyniku, kt\'{o}ra jest rz\k{e}du $O(|Q|^3)$.
+Zredukujmy problem z Twierdzenia \ref{tw:twierdzenie1} dotycz\k{a}cego synchronizowalno\'{s}ci automatu do problemu zasi\k{e}gu w automacie par $P^{[2]}(\mathscr{A})$ automatu pot\k{e}gowego $P(\mathscr{A})$, kt\'{o}rego zbi\'{o}r stan\'{o}w jest z{\l}o\.{z}ony z jednoelementowych oraz dwuelementowych podzbior\'{o}w zbioru $Q$. Automat par posiada $\frac{|Q|(|Q|+1)}{2}$ stan\'{o}w. Algorytm BFS, czyli przeszukiwanie grafu wszerz, rozwi\k{a}zuje problem znalezienia s{\l}owa synchronizuj\k{a}cego automat w czasie $O(|Q|^2*|\Sigma|)$. To ograniczenie pozwala wnioskowa\'{c}, i\.{z} je\'{s}li s{\l}owo resetuj\k{a}ce nie istnieje dostaniemy o tym stosown\k{a} informacj\k{e} w sko\'{n}czonej jednostce czasu, kt\'{o}rej wielko\'{s}\'{c} zale\.{z}y od rozmiar\'{o}w zar\'{o}wno zbioru stan\'{o}w jak i alfabetu. Je\'{s}li natomiast automat $\mathscr{A}$ jest synchroniczny, jako wynik algorytmu wyprodukowane zostanie s{\l}owo resetuj\k{a}ce ten automat. Najlepszy znany algorytm, kt\'{o}ry jako wynik daje s{\l}owo resetuj\k{a}ce posiada z{\l}o\.{z}ono\'{s}\'{c} czasow\k{a} rz\k{e}du $O(|Q|^3+|Q|^2*|\Sigma|)$ oraz z{\l}o\.{z}ono\'{s}\'{c} pami\k{e}ciow\k{a} rz\k{e}du $O(|Q|^2*|\Sigma|)$, nie licz\k{a}c pami\k{e}ci potrzebnej na zapisanie wyniku, kt\'{o}ra jest rz\k{e}du $O(|Q|^3)$.
 
 
 %% SEKCJA 5 Problem długości słowa synchronizującego
-\newpage
 \section{Z{\l}o\.zono\'s\'c problemu d{\l}ugo\'{s}ci s{\l}owa resetuj\k{a}cego.}
 
-Automat mocy synchronicznego automatu mo\.ze by\'c u\.zyteczny w konstruowaniu najkr\'otszych s{\l}\'ow resetuj\k{a}cych, co jest zwi\k{a}zane z najkr\'otsz\k{a} \'scie\.zk\k{a} w automacie mocy od ca{\l}ego zestawu stan\'ow, a\.z do singletona. Oczywi\'scie w najgorszym przypadku wymaga to wyk{\l}adniczgo czasu. Niemniej jednak by{\l}y pr\'oby zaimplemetowania tego podej\'scia. Mo\.zna mie\'c nadziej\k{e}, \.ze odpowiednie obliczenia dla "wielomianowego" subautomatu $P^{[2]}(\mathscr{A})$ pozwol\k{a} uzyska\'c algorytm wielomianowy. Jednak, ma{\l}o prawdopodobne jest to, \.ze istnieje jakikolwiek rozs\k{a}dny algorytm znajdowania najkr\'otszego s{\l}owa resetuj\k{a}cego w przypadku og\'olnym.\\ 
+Automat pot\k{e}gowy synchronicznego automatu mo\.ze by\'c u\.zyteczny w konstruowaniu najkr\'otszych s{\l}\'ow resetuj\k{a}cych, co jest zwi\k{a}zane z najkr\'otsz\k{a} \'scie\.zk\k{a} w automacie pot\k{e}gowym od ca{\l}ego zestawu stan\'ow, a\.z do singletona. Oczywi\'scie w najgorszym przypadku wymaga to wyk{\l}adniczego czasu. Niemniej jednak by{\l}y pr\'oby zaimplemetowania tego podej\'scia. Mo\.zna mie\'c nadziej\k{e}, \.ze odpowiednie obliczenia dla "wielomianowego" subautomatu $P^{[2]}(\mathscr{A})$ pozwol\k{a} uzyska\'c algorytm wielomianowy. Jednak, ma{\l}o prawdopodobne jest to, \.ze istnieje jakikolwiek rozs\k{a}dny algorytm znajdowania najkr\'otszego s{\l}owa resetuj\k{a}cego w przypadku og\'olnym.\\ 
 \\
 Rozwa\.zmy teraz dwa nast\k{e}puj\k{a}ce problemy:
 
@@ -214,7 +249,6 @@ Trudno\'s\'c problemu decyzyjnego w 5.1 implikuje to, \.ze jego zoptymalizowana 
 
 
 %% SEKCJA 6 Hipoteza Cernego
-\newpage
 \section{Hipoteza \v Cernego.}
 
 W tym rozdziale om\'{o}wimy otwarty do tej pory problem i wyniki, zwi\k{a}zane z nast\k{e}puj\k{a}cym pytaniem: posiadaj\k{a}c zadane $n \in N$ jak d{\l}ugie mo\.ze by\'c s{\l}owo resetuj\k{a}ce sko\'nczony automat synchroniczny o $n$ stanach? 
@@ -232,13 +266,12 @@ $\delta(m,b)=m+1(modn)$
     \label{fig:rysunek7}
 \end{figure}
 
-\v Cerny udowodni{\l}, \.ze $C_{n}$ jest automatem synchronicznym i najkr\'otszym resetuj\k{a}cym go s{\l}owem jest $(ab^{n-1})^{n-2}a$ o d{\l}ugo\'sci $(n-1)^{2}$. Zatem je\'sli zdefiniujemy funkcj\k{e} \v Cernego $C(n)$ jako maksimum d{\l}ugo\'sci najkr\'otszego s{\l}owa resetuj\k{a}cego automat synchroniczny posiadaj\k{a}cy $n$ stan\'ow powy\.zsza w{\l}asno\'s\'c dla ci\k{a}gu $\{C_{n}\}_{n=2,3,\ldots}$ daje nier\'owno\'s\'c: $C(n)\leq(n-1)^{2}$. Hipoteza \v Cernego m\'owi \.ze tak naprawd\k{e} zachodzi r\'owno\'s\'c: $C(n)=(n-1)^{2}$. W literaturze mo\.zna spotka\'c nawi\k{a}zania do tego,\.ze praca \v Cernego z 1964 roku jest \'zr\'od{\l}em tej hipotezy, ale tak naprawd\k{e} nie zosta{\l}a ona wtedy sformu{\l}owana. Jedkak\.ze \v Cerny zaobserwowa{\l}, \.ze: $(n-1)^{2}\leq C(n)\leq2^{n}-n-1$ i za{\l}\k{a}czy{\l} do tego nast\k{e}puj\k{a}c\k{a} uwag\k{e}: "R\'o\.znica pomi\k{e}dzy granicami wzrasta szybko i nale\.zy je zacie\'sni\'c. Mo\.zna si\k{e} spodziewa\'c polepszenia g{\l}\'ownie dla g\'ornej granicy."
+\v Cerny udowodni{\l}, \.ze $C_{n}$ jest automatem synchronicznym i najkr\'otszym resetuj\k{a}cym go s{\l}owem jest $(ab^{n-1})^{n-2}a$ o d{\l}ugo\'sci $(n-1)^{2}$. Zatem je\'sli zdefiniujemy funkcj\k{e} \v Cernego $C(n)$ jako maksimum d{\l}ugo\'sci najkr\'otszego s{\l}owa resetuj\k{a}cego automat synchroniczny posiadaj\k{a}cy $n$ stan\'ow powy\.zsza w{\l}asno\'s\'c dla ci\k{a}gu $\{C_{n}\}_{n=2,3,\ldots}$ daje nier\'owno\'s\'c: $C(n)\leq(n-1)^{2}$. Hipoteza \v Cernego m\'owi \.ze tak naprawd\k{e} zachodzi r\'owno\'s\'c: $C(n)=(n-1)^{2}$. W literaturze mo\.zna spotka\'c nawi\k{a}zania do tego,\.ze praca \v Cernego z 1964 roku jest \'zr\'od{\l}em tej hipotezy, ale tak naprawd\k{e} nie zosta{\l}a ona wtedy sformu{\l}owana. Jednak\.ze \v Cerny zaobserwowa{\l}, \.ze: $(n-1)^{2}\leq C(n)\leq2^{n}-n-1$ i za{\l}\k{a}czy{\l} do tego nast\k{e}puj\k{a}c\k{a} uwag\k{e}: "R\'o\.znica pomi\k{e}dzy granicami wzrasta szybko i nale\.zy je zacie\'sni\'c. Mo\.zna si\k{e} spodziewa\'c polepszenia g{\l}\'ownie dla g\'ornej granicy."
 
 Hipoteza w swej obecnej postaci zosta{\l}a sformu{\l}owana troch\k{e} p\'ozniej, po tym jak oczekiwania zawarte w powy\.zszym cytacie zosta{\l}y potwierdzone przez Peter'a Starke'a, kt\'ory pomniejszy{\l} g\'orn\k{a} granic\k{e} do $1+\frac{n(n-1)(n-2)}{2}$, co by{\l}o pierwsz\k{a} wielomianow\k{a} g\'orn\k{a} granic\k{a} dla $C(n)$. \v Cerny wypowiedzia{\l} hipotez\k{e} $C(n)=(n-1)^{2}$ na Konferencji Cybernetycznej  w Bratys{\l}awie w 1969 roku, natomiast w druku hipoteza pojawi{\l}a si\k{e} po raz pierwszy w 1971 roku.
 
 
 %% SEKCJA 7 Oszacowanie długości słowa synchronizującego z dowodem
-\newpage
 \section{Oszacowanie d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego.}
 
 W rozdziale sz\'ostym przedstawiona zosta{\l}a tre\'s\'c hipotezy \v Cernego oraz pewne g\'orne oszacowania funkcji $C_{n}$, kt\'ore z  biegiem czasu stawa{\l}y si\k{e} coraz dok{\l}adniejsze. Najdok{\l}adniejsze znane g\'orne ograniczenie funkcji \v Cernego gwarantuje to, \.ze dla ka\.zdego automatu synchronicznego posiadaj\k{a}cego $n$ stan\'ow istnieje s{\l}owo resetuj\k{a}ce o d{\l}ugo\'sci $\frac{n^{3}-n}{6}$. Takie s{\l}owo resetuj\k{a}ce powstaje w wyniku nast\k{e}puj\k{a}cego algorytmu.\\
@@ -270,20 +303,9 @@ Niech $A_{1},\ldots,A_{m}$ b\k{e}dzie ci\k{a}giem zbior\'ow o mocy $r$, a $B_{1}
 \end{twr} 
 
 \begin{dw}
-Oznaczamy $X=\bigcup_{i=1}^{m} (A_i \cup B_{i})$. X jest zbiorem sko\'nczonym. Wybieramy zbi\'r $V\in\mathbb{R}^{r+1}$, taki \.ze $|V|=|X|$ oraz spe{\l}niony jest warunek: ka\.zde $r+1$ wektor\'ow z $V$ s\k{a} liniowo niezale\.zne. Nast\k{e}pnie ka\.zdy element zbioru $X$ nale\.zy powi\k{a}za\'c z odpowiednim elementem zbioru $V$, dzi\k{e}ki czemu zbiory $A_{i}$ oraz $B_{i}$ mo\.zna rozwa\.za\'c jako podzbiory V. Teraz dla ka\.zdego $j$ zdefiniujmy wielomian $f_{j}(x)=\prod_{v\in B_{j}}<v,x>$ powi\k{a}zany ze zbiorem $B_{j}$, gdzie $x=(x_{1},\ldots,x_{r+1})$. Skoro $A_{i}$ sk{\l}ada si\k{e} z $r$ liniowo niezale\.znych wektor\'ow, to pow{\l}oka liniowa $A_{i}$ ma wymiar $r$. Dla ka\.zdego $i$ wybieramy wektor normalny przestrzeni $spanA_{i}$. Oznaczmy go $y_{i}$. Wektor $y_{i}$ jest prostopad{\l}y do przestrzeni $spanA_{i}$, wi\k{e}c $<v,y_{i}>=0$, je\'sli tylko $v\in spanA_{i}$. Poka\.zemy \.ze $v\in spanA_{i}$, je\'sli $v\in A_{i}$. Przyp\'s\'cmy, \.ze $v\in spanA_{i}$, ale $v\notin A_{i}$. Zauwa\.zmy \.ze $span(A_{i}\cup\{v\})=spanA_{i}$, gdzie $spanA_{i}$ ma wymiar $r$. Zatem $span(A_{i}\cup\{v\})$ r\'ownie\.z ma wymiar $r$, co jest sprzeczne z za{\l}o\.zeniem, \.ze dowolne $r+1$ wektor\'ow z $V$ s\k{a} liniowo niezale\.zne. Mamy zatem \.ze $<v,y_{i}>=0$, je\'sli $v\in A_{i}$. Wiemy zatem, \.ze $f_j(y_{i})=0$ je\'sli $<v,y_{i}>=0$ dla pewnego $v\in B_{j}$. Ponadto $<v,y_{i}>=0$ dla pewnego $v\in B_{j}$, je\'sli $v\in B_{j}$ i $v\in A_{i}$, co zachodzi w przypadku, gdy $A_{i}\cap B_{j}\neq\emptyset$. Z za{\l}o\.ze\'n wiemy, \.ze $A_{i}\cap B_{j}\neq\emptyset$ dla $i<j$ oraz $A_{i}\cap B_{j}=\emptyset$ dla $i=j$. Zatem $f_{j}(y_{i})=0$ dla $i<j$ oraz $f_{j}(y_{i})\neq0$ dla $i=j$. Teraz poka\.zemy, \.ze $\{f_{j}\}_{j=1}^{m}$ tworz\k{a} uk{\l}ad liniowo niezale\.zny. Przypu\'s\'cmy, \.ze tak nie jest. Istnieje zatem $k$, takie \.ze: $c_{1}f_{1}+\ldots+c_{m}f_{m}=0$ i $c_{k}\neq0$. Rozwa\.zmy warto\'s\'c powy\.zszej kombinacji liniowej na wektorze $y_{k}$: $c_{1}f_{1}(y_{k})+\ldots+c_{k}f_{k}(y_{k})+\ldots+c_{m}f_{m}(y_{k})=0$. $\forall i$ $i<k$: $f_{i}(y_{k})=0$. Poza tym, na podstawie powy\.zszych rozwa\.za\'n mamy: $\forall i$ $i>k$: $f_{i}(y_{k})=0$. Tym samym z r\'ownania znikaj\k{a} wszystkie sk\'ladniki, poza jednym. Otrzymujemy $c_{k}f_{k}(y_{k})=0$. Ale wiemy \.ze $f_{k}(y_{k})\neq0$. Zatem $c_{k}=0$, co jest sprzeczne  z za{\l}o\.zeniem $c_{k}\neq0$.Udowodnili\'smy, \.ze $\{f_{j}\}_{j=1}^{m}$ tworz\k{a} uk{\l}ad liniowo niezale\.zny. Teraz musimy ogarniczy\'c wymiarpodprzestrzeni zawieraj\k{a}cej $\{f_{j}\}_{j=1}^{m}$. Dla ka\.zdego $j$ wszystkie jednomiany wielomianu $f_{j}$ maj\k{a} stopie\'n $s$ i tworz\k{a} baz\k{e} tej podprzestrzeni. Ka\.dy jednomian stopnia $s$ ma posta\'c $x_{1}^{l_{1}}\cdot\ldots\cdot x_{r+1}^{l_{r+1}}$, gdzie $l_{1}+\ldots+l_{r+1}=s$. Musimy teraz odpowiedzie\'c na nast\k{e}puj\k{a}ce pytanie: jak du\.zo r\'o\.znych jednomian\'ow tej postaci istnieje? Rozwi\k{a}zaniem tego problemu dla nieujemnych $l_{1},\ldots,l_{r+1}$ jest liczba ${r+s}\choose{s}$. Zatem $\{f_{j}\}_{j=1}^{m}$ jest uk{\l}adem $m$-liniowo niezale\.znych element\'ow, zawartym w przestrzeni o wymiarze mniejszym b\k{a}d\'z r\'ownym ${r+s}\choose{s}$. Otrzymujemy tez\k{e} twierdzenia: $m\leq$ ${r+s}\choose{s}$.
+Oznaczamy $X=\bigcup_{i=1}^{m} (A_i \cup B_{i})$. X jest zbiorem sko\'nczonym. Wybieramy zbi\'r $V\in\mathbb{R}^{r+1}$, taki \.ze $|V|=|X|$ oraz spe{\l}niony jest warunek: ka\.zde $r+1$ wektor\'ow z $V$ s\k{a} liniowo niezale\.zne. Nast\k{e}pnie ka\.zdy element zbioru $X$ nale\.zy powi\k{a}za\'c z odpowiednim elementem zbioru $V$, dzi\k{e}ki czemu zbiory $A_{i}$ oraz $B_{i}$ mo\.zna rozwa\.za\'c jako podzbiory V. Teraz dla ka\.zdego $j$ zdefiniujmy wielomian $f_{j}(x)=\prod_{v\in B_{j}}<v,x>$ powi\k{a}zany ze zbiorem $B_{j}$, gdzie $x=(x_{1},\ldots,x_{r+1})$. Skoro $A_{i}$ sk{\l}ada si\k{e} z $r$ liniowo niezale\.znych wektor\'ow, to pow{\l}oka liniowa $A_{i}$ ma wymiar $r$. Dla ka\.zdego $i$ wybieramy wektor normalny przestrzeni $spanA_{i}$. Oznaczmy go $y_{i}$. Wektor $y_{i}$ jest prostopad{\l}y do przestrzeni $spanA_{i}$, wi\k{e}c $<v,y_{i}>=0$, je\'sli tylko $v\in spanA_{i}$. Poka\.zemy \.ze $v\in spanA_{i}$, je\'sli $v\in A_{i}$. Przyp\'s\'cmy, \.ze $v\in spanA_{i}$, ale $v\notin A_{i}$. Zauwa\.zmy \.ze $span(A_{i}\cup\{v\})=spanA_{i}$, gdzie $spanA_{i}$ ma wymiar $r$. Zatem $span(A_{i}\cup\{v\})$ r\'ownie\.z ma wymiar $r$, co jest sprzeczne z za{\l}o\.zeniem, \.ze dowolne $r+1$ wektor\'ow z $V$ s\k{a} liniowo niezale\.zne. Mamy zatem \.ze $<v,y_{i}>=0$, je\'sli $v\in A_{i}$. Wiemy zatem, \.ze $f_j(y_{i})=0$ je\'sli $<v,y_{i}>=0$ dla pewnego $v\in B_{j}$. Ponadto $<v,y_{i}>=0$ dla pewnego $v\in B_{j}$, je\'sli $v\in B_{j}$ i $v\in A_{i}$, co zachodzi w przypadku, gdy $A_{i}\cap B_{j}\neq\emptyset$. Z za{\l}o\.ze\'n wiemy, \.ze $A_{i}\cap B_{j}\neq\emptyset$ dla $i<j$ oraz $A_{i}\cap B_{j}=\emptyset$ dla $i=j$. Zatem $f_{j}(y_{i})=0$ dla $i<j$ oraz $f_{j}(y_{i})\neq0$ dla $i=j$. Teraz poka\.zemy, \.ze $\{f_{j}\}_{j=1}^{m}$ tworz\k{a} uk{\l}ad liniowo niezale\.zny. Przypu\'s\'cmy, \.ze tak nie jest. Istnieje zatem $k$, takie \.ze: $c_{1}f_{1}+\ldots+c_{m}f_{m}=0$ i $c_{k}\neq0$. Rozwa\.zmy warto\'s\'c powy\.zszej kombinacji liniowej na wektorze $y_{k}$: $c_{1}f_{1}(y_{k})+\ldots+c_{k}f_{k}(y_{k})+\ldots+c_{m}f_{m}(y_{k})=0$. $\forall i$ $i<k$: $f_{i}(y_{k})=0$. Poza tym, na podstawie powy\.zszych rozwa\.za\'n mamy: $\forall i$ $i>k$: $f_{i}(y_{k})=0$. Tym samym z r\'ownania znikaj\k{a} wszystkie sk\'ladniki, poza jednym. Otrzymujemy $c_{k}f_{k}(y_{k})=0$. Ale wiemy \.ze $f_{k}(y_{k})\neq0$. Zatem $c_{k}=0$, co jest sprzeczne  z za{\l}o\.zeniem $c_{k}\neq0$.Udowodnili\'smy, \.ze $\{f_{j}\}_{j=1}^{m}$ tworz\k{a} uk{\l}ad liniowo niezale\.zny. Teraz musimy ograniczy\'c wymiar podprzestrzeni zawieraj\k{a}cej $\{f_{j}\}_{j=1}^{m}$. Dla ka\.zdego $j$ wszystkie jednomiany wielomianu $f_{j}$ maj\k{a} stopie\'n $s$ i tworz\k{a} baz\k{e} tej podprzestrzeni. Ka\.dy jednomian stopnia $s$ ma posta\'c $x_{1}^{l_{1}}\cdot\ldots\cdot x_{r+1}^{l_{r+1}}$, gdzie $l_{1}+\ldots+l_{r+1}=s$. Musimy teraz odpowiedzie\'c na nast\k{e}puj\k{a}ce pytanie: jak du\.zo r\'o\.znych jednomian\'ow tej postaci istnieje? Rozwi\k{a}zaniem tego problemu dla nieujemnych $l_{1},\ldots,l_{r+1}$ jest liczba ${r+s}\choose{s}$. Zatem $\{f_{j}\}_{j=1}^{m}$ jest uk{\l}adem $m$-liniowo niezale\.znych element\'ow, zawartym w przestrzeni o wymiarze mniejszym b\k{a}d\'z r\'ownym ${r+s}\choose{s}$. Otrzymujemy tez\k{e} twierdzenia: $m\leq$ ${r+s}\choose{s}$.
 \end{dw}
 
 Teraz tez\k{e} twierdzenia 7.1, wykorzystujemy do rozwi\k{a}zania problemu 7.1. Skoro dla ka\.zdego $i$ $R_{i}\subseteq P_{i}$ to $\forall i$ $(Q-P_{i})\cap R_{i}=\emptyset$ oraz $|Q-P_{i}|=n-k$. Ponadto je\.zeli $R_{j}\not\subseteq P_{i}$ dla $1\leq i<j\leq l$, to dla $1\leq i<j\leq l$ zachodzi $(Q-P_{i})\cap R_{j}\neq\emptyset$. Przyjmujemy: $A_{i}=Q-P_{i}$, $r=n-k$, $B_{i}=R_{i}$, $s=2$, $m=l$ i podstawiaj\k{a}c do wzoru otrzymanego w twierdzeniu otrzymujemy: $l\leq$ ${n-k+2}\choose{2}$. Wiemy, \.ze p\k{e}tla algorytmu wykona si\k{e} maksymalnie $n-1$ razy w wyniku czego otrzymamy s{\l}owo resetuj\k{a}ce postaci: $w=w_{1}\ldots w_{n-1}$. Zatem, aby dosta\'c g\'orne ograniczenie d{\l}ugo\'sci s{\l}owa resetuj\k{a}cego nale\.zy posumowa\'c $l\leq$ ${n-k+2}\choose{2}$ po $k=2,..,n$. Ostatecznie mamy: $\sum_{k=2}^{n}$${n-k+2}\choose{2}$$=\frac{n^{3}-n}{6}$.
 
 \end{document}
-
-
-\begin{comment}
-PYTANIA
-
-Często używam BFS-a, może po krótce gdzieś go opisać? Jakiś jeden krótki przykład?
-
-Sekcja 3:
-Może jakieś inne opracowanie tego dowodu? Co to jest P^[2](A)? Czy to na pewno jest podautomat automatu mocy P(A)? Czy dobrze został przetłumaczony fragment "reachability problem" na problem zasięgu w podautomacie P^[2](A)? Algorytm BFS daje tylko informację o tym czy słowo synchronizujące istnieje, a żeby znaleźć to słowo trzeba użyć tego algorytmu o złożoności O(|Q|^3+|Q|^2*|\Sigma|)?
-
-\end{comment}
