@@ -25,7 +25,7 @@
 \maketitle
 
 \section*{Wst\k{e}p}
-W poni\.{z}szej pracy przedstawimy Hipotez\k{e} \v Cernego oraz zwi\k{a}zane z ni\k{a} zagadnienia. Problem ten jest zwi\k{a}zane z ograniczeniem d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego dany automat. Jest to problem otwarty ju\.{z} od ponad 45 lat. Praca zosta{\l}a napisana na potrzeby uko\'{n}czenia studi\'{o}w. Pierwszy rozdzia{\l} jest dzie{\l}em pracy wsp\'{o}lnej, rozdzia{\l}y 2, 3 oraz 4 s\k{a} autorstwa Adama Jamki, natomiast rozdzia{\l}y 5, 6, 7 Sylwii Klimkiewicz.
+W poni\.{z}szej pracy przedstawimy Hipotez\k{e} \v Cernego oraz zwi\k{a}zane z ni\k{a} zagadnienia. Problem ten  jest zwi\k{a}zane z ograniczeniem d{\l}ugo\'{s}ci s{\l}owa synchronizuj\k{a}cego dany automat. Jest to problem otwarty ju\.{z} od ponad 45 lat. Praca zosta{\l}a napisana na potrzeby uko\'{n}czenia studi\'{o}w. Pierwszy rozdzia{\l} jest dzie{\l}em pracy wsp\'{o}lnej, rozdzia{\l}y 2, 3 oraz 4 s\k{a} autorstwa Adama Jamki, natomiast rozdzia{\l}y 5, 6, 7 Sylwii Klimkiewicz.
 
 %% SEKCJA 1 Podstawowe definicje
 \section{Podstawowe definicje i twierdzenia.}
@@ -87,10 +87,30 @@ S{\l}owem resetuj\k{a}cym lub synchronizuj\k{a}cym nazywamy s{\l}owo $\omega \in
 Automat $\mathscr{A}=(Q, \Sigma, \delta)$ nazywamy synchronicznym je\'{s}li istnieje s{\l}owo $\omega \in \Sigma$ synchronizuj\k{a}ce ten automat.
 \end{df}
 %% def 1.14 
+\begin{df}
+Problem NP to problem decyzyjny, w kt\'orym sprawdzenie poprawno\'sci rozwi\k{a}zania wymaga z{\l}o\.zono\'sci obliczeniowej wielomianowej, a znalezienie rozwi\k{a}zania wymaga z{\l}o\.zono\'sci co najmniej wielomianowej.
+\end{df}
+%% def 1.15
+\begin{df}
+Problem NP-trudny to problem obliczeniowy, dla kt\'orego nie mo\.zna znale\'z\'c rozwi\k{a}zania w czasie wielomianowym, a sprawdzenie poprawno\'sci rozwi\k{a}zania jest co najmniej tak trudne jak ka\.zdego innego problemu z klasy NP.
+\end{df}
+%% def 1.16 
+\begin{df}
+Problm NP-zupe{\l}ny to problem decyzyjny dla kt\'orego nie mo\.zna znale\'z\'c rozwi\k{a}zania w czasie wielomianowym, natomiast sprawdzenie poprawno\'sci rozwi\k{a}zania jest mo\.zliwe w czasie wielomianowym. 
+\end{df}
+%% def 1.17
+\begin {df} 
+Problem coNP to problem nale\.z\k{a}cy do klasy problem\'ow dope{\l}niaj\k{a}cych problemy NP.
+\end{df}
+%% def 1.18
+\begin{df}
+Problem PSPACE to problem decyzyjny, dla kt\'orego mo\.zna znale\'z\'c rozwi\k{a}zanie wykorzystuj\k{a}c przestrze\'n wielomianow\k{a}.
+\end{df}
+%% def 1.19
 \begin{df} 
 Elementem neutralnym dzia{\l}ania $+:K\times K\rightarrow K$ nazywamy $e\in K$, je\.zeli $\forall_{x\in K}:e+x=x+e=x$.
 \end{df}
-%% def 1.15 
+%% def 1.20 
 \begin{df} 
 Par\k{e}$(K,+)$, gdzie $K$ jest zbiorem, a $+$ jest dzia{\l}aniem okre\'slonym w $K$ nazywamy grup\k{a}, je\.zeli spe{\l}nione s\k{a} nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
@@ -100,11 +120,11 @@ Par\k{e}$(K,+)$, gdzie $K$ jest zbiorem, a $+$ jest dzia{\l}aniem okre\'slonym w
 \item $\forall_{x\in K} \exists_{x'\in K}: x+x'=x'+x=e$
 \end{enumerate}
 \end{df}
-%% def 1.16 
+%% def 1.21 
 \begin{df} 
 Grup\k{e} $(K,+)$ nazywamy abelow\k{a} lub przemienn\k{a}, je\.zeli $\forall_{x,y\in K}: x+y=y+x$.
 \end{df}
-%% def 1.17 
+%% def 1.22 
 \begin{df} 
 Tr\'ojk\k{e} $(K,+,*)$ gdzie K jest zbiorem, a $+$ i $*$ s\k{a} dzia{\l}aniami okre\'slonymi w $K$ nazywamy pier\'scieniem, je\.zeli spe{\l}nione s\k{a} nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
@@ -115,15 +135,15 @@ Tr\'ojk\k{e} $(K,+,*)$ gdzie K jest zbiorem, a $+$ i $*$ s\k{a} dzia{\l}aniami o
 \end{enumerate}
 Dzia{\l}anie $+$ nazywamy dzia{\l}aniem addytywnym, natomiast $*$ nazywamy dzia{\l}aniem multiplikatywnym.
 \end{df}
-%% def 1.18 
+%% def 1.23 
 \begin{df} 
 Pier\'scie\'n (K,+,*) nazywamy pier\'scieniem z jedno\'sci\k{a} je\.zeli istnieje $e'\in K$ taki, \.ze $\forall_{x\in K}: e'*x=x*e'=x$. W\'owczas $e'$ jest elementem neutralnym dzia{\l}ania $*$.
 \end{df}
-%% def 1.19 
+%% def 1.24 
 \begin{df} 
 Pier\'scie\'n z jedno\'sci\k{a} (K,+,*) nazywamy cia{\l}em, je\.zeli $\forall_{x\in K-\{e\}} \exists_{x^{-1}\in K}: x^{-1}*x=e'$, gdzie $e$ jest elementem neutralnym działania $+$.
 \end{df}
-%% def 1.20
+%% def 1.25
 \begin{df}
 Przestrzeni\k{a} liniow\k{a} lub wektorow\k{a} nad cia{\l}em $K$ nazywamy $(V, +, *)$, gdzie $V$ jest niepustym zbiorem oraz spe{\l}nia nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
@@ -137,15 +157,15 @@ Przestrzeni\k{a} liniow\k{a} lub wektorow\k{a} nad cia{\l}em $K$ nazywamy $(V, +
 \item $\exists_{1 \in K} \forall_{v \in V}: 1v = v$
 \end{enumerate}
 \end{df}
-%% def 1.21
+%% def 1.26
 \begin{df}
 Wektory $v_{1}, v_{2}, \dots, v_{n}$ s\k{a} liniowo niezale\.{z}ne wtedy i tylko wtedy, gdy $\forall_{\alpha_{1}, \alpha_{2}, \dots, \alpha_{n} \in \Re} \alpha_{1}v_{1} + \alpha_{2}v_{2} + \dots + \alpha_{n}v_{n} = 0 => \alpha_{1} = \alpha_{2} = \dots = \alpha_{n} = 0$
 \end{df}
-%% def 1.22 
+%% def 1.27 
 \begin{df}
 Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$, $A\subseteq V$. Zbi\'or $spanA=\{v\in V: v=\alpha_{1}v_{1}+\ldots+\alpha_{k}v_{k}: \alpha_{1},\ldots,\alpha_{k}\in K, v_{1},\ldots,v_{k}\in A\}$ nazywamy pow{\l}ok\k{a} liniow\k{a} zbioru $A$.
 \end{df}
-%% def 1.23
+%% def 1.28
 \begin{df}
 Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Podzbi\'or $U$ przestrzeni $V$ nazywamy podprzestrzeni\k{a} wekorow\k{a} lub liniow\k{a} wtedy i tylko wtedy, gdy spe{\l}nione s\k{a} nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
@@ -157,7 +177,7 @@ Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. P
 \begin{wn}
 Podzbi\'or $U$ przestrzeni wektorowej $V$ nad cia{\l}em $K$ jest podprzestrzeni\k{a} wektorow\k{a} wtedy i tylko wtedy, gdy $(U, +, *)$ jest przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$.
 \end{wn}
-%% def 1.24 baza przestrzeni
+%% def 1.29 baza przestrzeni
 \begin{df}
 Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Zbi\'{o}r $B \subset V$ nazywamy baz\k{a} przestrzeni $V$ je\'{s}li:
 \begin{enumerate}[I.]
@@ -165,7 +185,7 @@ Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Z
 \item $B$ jest zbiorem wektor\'{o}w liniowo niezale\.{z}nych.
 \end{enumerate}
 \end{df}
-%% def 1.25 wymiar przestrzeni
+%% def 1.30 wymiar przestrzeni
 \begin{df}
 Niech $B$ b\k{e}dzie dowolna baz\k{a} przestrzeni wektorowej $V$:
 \begin{itemize}
@@ -174,11 +194,11 @@ Niech $B$ b\k{e}dzie dowolna baz\k{a} przestrzeni wektorowej $V$:
 \item Je\'{s}li $V =$ \{\={0}\} przyjmujemy $dim V = 0$
 \end{itemize}
 \end{df}
-%% def 1.26 standardowy iloczyn skalarny
+%% def 1.31 standardowy iloczyn skalarny
 \begin{df}
 Standardowym iloczynem skalarnym $u = (u_{1}, \dots, u_{n}) \in R^{n}$ oraz $v = (v_{1}, \dots, v_{n}) \in R^{n}$ nazywamy liczb\k{e} $<u, v> := \sum_{i=1}^{n} u_{i}v_{i} = u_{1}v_{1} + \dots + u_{n}v_{n}$
 \end{df}
-%% df 1.27 wektor normalny
+%% df 1.32 wektor normalny
 \begin{df}
 Wektorem normalnym nazywamy wektor prostopad{\l}y do danej przestrzeni.
 \end{df}
