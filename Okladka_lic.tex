@@ -9,6 +9,7 @@
 \usepackage{amsfonts}
 \usepackage{enumerate}
 \usepackage{amsthm}
+\usepackage{textcomp}
 
 \newtheorem{df}{Definicja}[section]
 \newtheorem{pr}{Przyk{\l}ad}[section]
@@ -155,6 +156,31 @@ Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. P
 \begin{wn}
 Podzbi\'or $U$ przestrzeni wektorowej $V$ nad cia{\l}em $K$ jest podprzestrzeni\k{a} wektorow\k{a} wtedy i tylko wtedy, gdy $(U, +, *)$ jest przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$.
 \end{wn}
+%% def 1.24 baza przestrzeni
+\begin{df}
+Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Zbi\'{o}r $B \subset V$ nazywamy baz\k{a} przestrzeni $V$ je\'{s}li:
+\begin{enumerate}[I.]
+\item $span B = V$ (zbi\'{o}r $B$ generuje ca{\l}\k{a} przestrze\'{n} $V$, czyli ka\.{z}dy wektor $v \in V$ daje si\k{e} zapisa\'{c} jako sko\'{n}czona kombinacja liniowa wektor\'{o}w z $B$)
+\item $B$ jest zbiorem wektor\'{o}w liniowo niezale\.{z}nych.
+\end{enumerate}
+\end{df}
+%% def 1.25 wymiar przestrzeni
+\begin{df}
+Niech $B$ b\k{e}dzie dowolna baz\k{a} przestrzeni wektorowej $V$:
+\begin{itemize}
+\item Je\'{s}li $B$ jest zbiorem sko\'{n}czonym ($\#B<\infty$) to m\'{o}wimy, \.{z}e przestrze\'{n} $V$ jest sko\'{n}czenie wymiarowa, a liczb\k{e} wektor\'{o}w w bazie $B$ nazywamy wymiarem przestrzeni i oznaczmy $dim V$
+\item Je\'{s}li $B$ sk{\l}ada si\k{e} z niesko\'{n}czonej liczby wektor\'{o}w to m\'{o}wimy, \.{z}e $V$ jest niesko\'{n}czenie wymiarowa i piszemy $dim V = \infty$
+\item Je\'{s}li $V =$ \{\={0}\} przyjmujemy $dim V = 0$
+\end{itemize}
+\end{df}
+%% def 1.26 standardowy iloczyn skalarny
+\begin{df}
+Standardowym iloczynem skalarnym $u = (u_{1}, \dots, u_{n}) \in R^{n}$ oraz $v = (v_{1}, \dots, v_{n}) \in R^{n}$ nazywamy liczb\k{e} $u$\textopenbullet $v := \sum_{i=1}^{n} u_{i}v_{i} = u_{1}v_{1} + \dots + u_{n}v_{n}$
+\end{df}
+%% df 1.27 wektor normalny
+\begin{df}
+Wektorem normalnym nazywamy wektor prostopad{\l}y do danej przestrzeni.
+\end{df}
 %% twierdzenie 1.1
 \begin{twr}
 (WKW na podprzestrze\'{n} wektorow\k{a}) \newline Niech  $(V, +, *)$ - przestrze\'{n} wektorowa nad cia{\l}em $K$. Zbi\'{o}r $U \subset V$ jest podprzestrzeni\k{a} wektorow\k{a} przestrzeni $V \Leftrightarrow \forall_{\alpha, \beta \in K} \forall_{u, v \in U} \alpha u + \beta v \in U$.
