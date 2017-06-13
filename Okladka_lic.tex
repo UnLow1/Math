@@ -26,7 +26,7 @@
 
 
 %% SEKCJA 1 Podstawowe definicje
-\section{Podstawowe definicje.}
+\section{Podstawowe definicje i twierdzenia.}
 %% def 1.1
 \begin{df} 
 Grafem nazywamy par\k{e} $G=(V,E)$, gdzie $V$ jest niepustym zbiorem, kt\'orego elementy zwane s\k{a} wierzcho{\l}kami, a $E$ jest rodzin\k{a} dwuelementowych podzbior\'ow zbioru $V$, zwanych kraw\k{e}dziami.
@@ -155,7 +155,28 @@ Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. P
 \begin{wn}
 Podzbi\'or $U$ przestrzeni wektorowej $V$ nad cia{\l}em $K$ jest podprzestrzeni\k{a} wektorow\k{a} wtedy i tylko wtedy, gdy $(U, +, *)$ jest przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$.
 \end{wn}
+%% twierdzenie 1.1
+\begin{twr}
+(WKW na podprzestrze\'{n} wektorow\k{a}) \newline Niech  $(V, +, *)$ - przestrze\'{n} wektorowa nad cia{\l}em $K$. Zbi\'{o}r $U \subset V$ jest podprzestrzeni\k{a} wektorow\k{a} przestrzeni $V \Leftrightarrow \forall_{\alpha, \beta \in K} \forall_{u, v \in U} \alpha u + \beta v \in U$.
+\end{twr}
+\begin{proof}
+$(=>)$ Zak{\l}adam, \.{z}e zbi\'{o}r $U \subset V$ jest podprzestrzeni\k{a} wektorow\k{a}. We\'{z}my dowolne $\alpha, \beta \in K$ oraz $u, v \in U => \alpha u \in U$ oraz $\beta v \in U => \alpha u + \beta v \in U$
+\newline
+$(<=)$ Zak{\l}adam, \.{z}e $\forall_{\alpha, \beta \in K} \forall_{u, v \in U} \alpha u + \beta v \in U$.
+\begin{itemize}
+\item Czy $\forall_{u, v \in U} => u+v \in U$? Tak, poniewa\.{z} wystarczy w za{\l}o\.{z}eniach przyj\k{a}\'{c} $\alpha = \beta = 1$, a wtedy $1*u+1*v \in U => u + v \in U$
+\item Czy $\forall_{\alpha \in K} \forall_{u \in U} => \alpha u \in U$? Tak, poniewa\.{z} przy przyj\k{e}tych za{\l}o\.{z}eniach we\'{z}miemy $\beta = 0$ oraz $v =$ \={0}. W\'{o}wczas otrzymujemy $\alpha u + 0 *$\={0} $= \alpha u \in U$
+\end{itemize}
+\end{proof}
 
+%% twierdzenie 1.2
+\begin{twr}
+$Span A$ jest podprzestrzeni\k{a} wektorow\k{a} w $V$ i do tego jest to najmniejsza podprzestrze\'{n} wektorowa $V$ zawieraj\k{a}ca zbi\'{o}r A.
+\end{twr}
+\begin{proof}
+$Span A$ jest podprzestrzeni\k{a} wektorow\k{a}, poniewa\.{z} \newline $\forall_{u, v \in span A} \forall_{\alpha, \beta \in K} \exists_{u_{1}, \dots, u_{k} \in A}$ $ \exists_{\alpha_{1}, \dots, \alpha_{k} \in K}$ $u = \alpha_{1}u_{1} + \dots + \alpha_{k}u_{k} \exists_{v_{1}, \dots, v_{k} \in A} \exists_{\beta_{1}, \dots, \beta_{k} \in K} v = \beta_{1}v_{1}  + \dots + \beta_{k}v_{k}$, a wi\k{e}c $\alpha u + \beta v = \alpha (\alpha_{1}u_{1} + \dots + \alpha_{k}u_{k}) + \beta (\beta_{1}v_{1} + \dots + \beta_{k}v_{k}) = \alpha \alpha_{1}u_{1}  + \dots + \alpha \alpha_{k}u_{k} + \beta \beta_{1}v_{1} + \dots + \beta \beta_{k}v_{k} \in span A$ \newline
+Niech $W \subset V$ - podprzestrze\'{n} wektorowa w $V$ taka, \.{z}e $A \subset W$. Wystarczy pokaza\'{c}, \.{z}e $span A \subset W$.
+\end{proof}
 
 %% SEKCJA 2 Wprowadzenie do problemu
 \section{Wprowadzenie do problemu. Przyk{\l}ady zastosowa\'{n}.}
