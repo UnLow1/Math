@@ -72,7 +72,7 @@ Graf $G$ jest sp\'ojny je\'sli dowolne dwa jego wierzcho{\l}ki s\k{a} po{\l}\k{a
 \end{df}
 %% def 1.11
 \begin{df} 
-Automatem nazywamy tr\'{o}jk\k{e} $\mathscr{A}=(Q, \Sigma, \delta)$, gdzie Q jest zbiorem mo\.{z}liwych stan\'{o}w, $\Sigma$ jest alfabetem, natomiast $\delta:Q \times \Sigma \rightarrow$ Q jest funkcj\k{a} okre\'{s}laj\k{a}c\k{a} zachowanie si\k{e} automatu pod wp{\l}ywem litery nale\.{z}\k{a}cej do alfabetu $\Sigma$ w stanie $q \in Q$.
+Automatem nazywamy tr\'{o}jk\k{e} $\mathscr{A}=(Q, \Sigma, \delta)$, gdzie Q jest zbiorem mo\.{z}liwych stan\'{o}w, $\Sigma$ jest alfabetem, natomiast $\delta:Q \times \Sigma \rightarrow$ $Q$ jest funkcj\k{a} okre\'{s}laj\k{a}c\k{a} zachowanie si\k{e} automatu pod wp{\l}ywem litery nale\.{z}\k{a}cej do alfabetu $\Sigma$ w stanie $q \in Q$.
 \end{df}
 %% wn 1.1 
 \begin{wn}
@@ -86,31 +86,40 @@ S{\l}owem resetuj\k{a}cym lub synchronizuj\k{a}cym automat nazywamy s{\l}owo $\o
 \begin{df} 
 Automat $\mathscr{A}=(Q, \Sigma, \delta)$ nazywamy synchronicznym je\'{s}li istnieje s{\l}owo $\omega \in \Sigma$ synchronizuj\k{a}ce ten automat.
 \end{df}
-%% def 1.14 
+%% def 1.14 automat potęgowy
 \begin{df}
-Problem NP to problem decyzyjny, w kt\'orym sprawdzenie poprawno\'sci rozwi\k{a}zania wymaga z{\l}o\.zono\'sci obliczeniowej wielomianowej, a znalezienie rozwi\k{a}zania wymaga z{\l}o\.zono\'sci co najmniej wielomianowej.
+Automatem pot\k{e}gowym nazywamy tr\'{o}jk\k{e} $(P'(Q), \Sigma, \delta)$ gdzie 
+$P'(Q)$ jest og\'{o}{\l}em niepustych podzbior\'{o}w $Q$, $\Sigma$ jest alfabetem, a odwzorowanie $\delta:P'(Q) \times \Sigma \rightarrow$ $P'(Q)$ jest funkcj\k{a} okre\'{s}laj\k{a}c\k{a} zachowanie si\k{e} automatu pod wp{\l}ywem litery nale\.{z}\k{a}cej do alfabetu $\Sigma$ w stanie $q \in P'(Q)$.
 \end{df}
-%% def 1.15
+%% def 1.15 automat par
 \begin{df}
-Problem NP-trudny to problem obliczeniowy, dla kt\'orego nie mo\.zna znale\'z\'c rozwi\k{a}zania w czasie wielomianowym, a sprawdzenie poprawno\'sci rozwi\k{a}zania jest co najmniej tak trudne jak ka\.zdego innego problemu z klasy NP.
+Automatem par nazywamy tr\'{o}jk\k{e} $(Q, \Sigma, \delta)$, gdzie $Q$ jest zbiorem stan\'{o}w, a odwzorowanie $\delta$ okre\'{s}lone jest dla ka\.{z}dego $a \in \Sigma$ oraz $q_1, q_2 \in Q$ w spos\'{o}b $\delta(\{q_1,q_2\}, a) = (\delta(q_1,a), \delta(q_2,a))$.
 \end{df}
 %% def 1.16 
 \begin{df}
-Problm NP-zupe{\l}ny to problem decyzyjny dla kt\'orego nie mo\.zna znale\'z\'c rozwi\k{a}zania w czasie wielomianowym, natomiast sprawdzenie poprawno\'sci rozwi\k{a}zania jest mo\.zliwe w czasie wielomianowym. 
+Problem NP to problem decyzyjny, w kt\'orym sprawdzenie poprawno\'sci rozwi\k{a}zania wymaga z{\l}o\.zono\'sci obliczeniowej wielomianowej, a znalezienie rozwi\k{a}zania wymaga z{\l}o\.zono\'sci co najmniej wielomianowej.
 \end{df}
 %% def 1.17
-\begin {df} 
-Problem coNP to problem nale\.z\k{a}cy do klasy problem\'ow dope{\l}niaj\k{a}cych problemy NP.
+\begin{df}
+Problem NP-trudny to problem obliczeniowy, dla kt\'orego nie mo\.zna znale\'z\'c rozwi\k{a}zania w czasie wielomianowym, a sprawdzenie poprawno\'sci rozwi\k{a}zania jest co najmniej tak trudne jak ka\.zdego innego problemu z klasy NP.
 \end{df}
 %% def 1.18
 \begin{df}
-Problem PSPACE to problem decyzyjny, dla kt\'orego mo\.zna znale\'z\'c rozwi\k{a}zanie wykorzystuj\k{a}c przestrze\'n wielomianow\k{a}.
+Problm NP-zupe{\l}ny to problem decyzyjny dla kt\'orego nie mo\.zna znale\'z\'c rozwi\k{a}zania w czasie wielomianowym, natomiast sprawdzenie poprawno\'sci rozwi\k{a}zania jest mo\.zliwe w czasie wielomianowym. 
 \end{df}
 %% def 1.19
-\begin{df} 
-Elementem neutralnym dzia{\l}ania $+:K\times K\rightarrow K$ nazywamy $e\in K$, takie \.ze $\forall_{x\in K}:e+x=x+e=x$.
+\begin {df} 
+Problem coNP to problem nale\.z\k{a}cy do klasy problem\'ow dope{\l}niaj\k{a}cych problemy NP.
 \end{df}
-%% def 1.20 
+%% def 1.20
+\begin{df}
+Problem PSPACE to problem decyzyjny, dla kt\'orego mo\.zna znale\'z\'c rozwi\k{a}zanie wykorzystuj\k{a}c przestrze\'n wielomianow\k{a}.
+\end{df}
+%% def 1.21
+\begin{df} 
+Elementem neutralnym dzia{\l}ania $+:K\times K\rightarrow K$ nazywamy $e\in K$ takie, \.ze $\forall_{x\in K}:e+x=x+e=x$.
+\end{df}
+%% def 1.22
 \begin{df} 
 Par\k{e}$(K,+)$, gdzie $K$ jest zbiorem, a $+$ jest dzia{\l}aniem okre\'slonym w $K$ nazywamy grup\k{a}, je\.zeli spe{\l}nione s\k{a} nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
@@ -120,11 +129,11 @@ Par\k{e}$(K,+)$, gdzie $K$ jest zbiorem, a $+$ jest dzia{\l}aniem okre\'slonym w
 \item $\forall_{x\in K} \exists_{x'\in K}: x+x'=x'+x=e$
 \end{enumerate}
 \end{df}
-%% def 1.21 
+%% def 1.23 
 \begin{df} 
 Grup\k{e} $(K,+)$ nazywamy abelow\k{a} lub przemienn\k{a}, je\.zeli $\forall_{x,y\in K}: x+y=y+x$.
 \end{df}
-%% def 1.22 
+%% def 1.24
 \begin{df} 
 Tr\'ojk\k{e} $(K,+,*)$ gdzie K jest zbiorem, a $+$ i $*$ s\k{a} dzia{\l}aniami okre\'slonymi w $K$ nazywamy pier\'scieniem, je\.zeli spe{\l}nione s\k{a} nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
@@ -135,15 +144,15 @@ Tr\'ojk\k{e} $(K,+,*)$ gdzie K jest zbiorem, a $+$ i $*$ s\k{a} dzia{\l}aniami o
 \end{enumerate}
 Dzia{\l}anie $+$ nazywamy dzia{\l}aniem addytywnym, natomiast $*$ nazywamy dzia{\l}aniem multiplikatywnym.
 \end{df}
-%% def 1.23 
+%% def 1.25 
 \begin{df} 
 Pier\'scie\'n (K,+,*) nazywamy pier\'scieniem z jedno\'sci\k{a} je\.zeli istnieje $e'\in K$ taki, \.ze $\forall_{x\in K}: e'*x=x*e'=x$. W\'owczas $e'$ jest elementem neutralnym dzia{\l}ania $*$.
 \end{df}
-%% def 1.24 
+%% def 1.26 
 \begin{df} 
 Pier\'scie\'n z jedno\'sci\k{a} (K,+,*) nazywamy cia{\l}em, je\.zeli $\forall_{x\in K-\{e\}} \exists_{x^{-1}\in K}: x^{-1}*x=e'$, gdzie $e$ jest elementem neutralnym działania $+$.
 \end{df}
-%% def 1.25
+%% def 1.27
 \begin{df}
 Przestrzeni\k{a} liniow\k{a} lub wektorow\k{a} nad cia{\l}em $K$ nazywamy $(V, +, *)$, gdzie $V$ jest niepustym zbiorem oraz spe{\l}nia nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
@@ -157,17 +166,17 @@ Przestrzeni\k{a} liniow\k{a} lub wektorow\k{a} nad cia{\l}em $K$ nazywamy $(V, +
 \item $\exists_{1 \in K} \forall_{v \in V}: 1v = v$
 \end{enumerate}
 \end{df}
-%% def 1.26
+%% def 1.28
 \begin{df}
 Niech $(V,+,*)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Wektory $v_{1}, v_{2}, \dots, v_{n}\in V$ s\k{a} liniowo niezale\.{z}ne wtedy i tylko wtedy, gdy $\forall_{\alpha_{1}, \alpha_{2}, \dots, \alpha_{n} \in K} \alpha_{1}v_{1} + \alpha_{2}v_{2} + \dots + \alpha_{n}v_{n} = 0 => \alpha_{1} = \alpha_{2} = \dots = \alpha_{n} = 0$
 \end{df}
-%% def 1.27 
+%% def 1.29 
 \begin{df}
 Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$, $A\subseteq V$. Zbi\'or $spanA=\{v\in V: v=\alpha_{1}v_{1}+\ldots+\alpha_{k}v_{k}: \alpha_{1},\ldots,\alpha_{k}\in K, v_{1},\ldots,v_{k}\in A\}$ nazywamy pow{\l}ok\k{a} liniow\k{a} zbioru $A$.
 \end{df}
-%% def 1.28
+%% def 1.30
 \begin{df}
-Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Podzbi\'or $U$ przestrzeni $V$ nazywamy podprzestrzeni\k{a} wekorow\k{a} lub liniow\k{a} wtedy i tylko wtedy, gdy spe{\l}nione s\k{a} nast\k{e}puj\k{a}ce warunki:
+Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Podzbi\'or $U$ przestrzeni $V$ nazywamy podprzestrzeni\k{a} wektorow\k{a} lub liniow\k{a} wtedy i tylko wtedy, gdy spe{\l}nione s\k{a} nast\k{e}puj\k{a}ce warunki:
 \begin{enumerate}[I.]
 \item $\forall_{u,v\in U}: u+v\in U$ 
 \item $\forall_{\alpha\in K}\forall_{u\in U}: \alpha u\in U$
@@ -177,7 +186,7 @@ Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. P
 \begin{wn}
 Podzbi\'or $U$ przestrzeni wektorowej $V$ nad cia{\l}em $K$ jest podprzestrzeni\k{a} wektorow\k{a} wtedy i tylko wtedy, gdy $(U, +, *)$ jest przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$.
 \end{wn}
-%% def 1.29 baza przestrzeni
+%% def 1.31 baza przestrzeni
 \begin{df}
 Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Zbi\'{o}r $B \subset V$ nazywamy baz\k{a} przestrzeni $V$ je\'{s}li:
 \begin{enumerate}[I.]
@@ -185,7 +194,7 @@ Niech $(V, +, *)$ b\k{e}dzie przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $K$. Z
 \item $B$ jest zbiorem wektor\'{o}w liniowo niezale\.{z}nych.
 \end{enumerate}
 \end{df}
-%% def 1.30 wymiar przestrzeni
+%% def 1.32 wymiar przestrzeni
 \begin{df}
 Niech $B$ b\k{e}dzie dowolna baz\k{a} przestrzeni wektorowej $V$:
 \begin{itemize}
@@ -194,11 +203,11 @@ Niech $B$ b\k{e}dzie dowolna baz\k{a} przestrzeni wektorowej $V$:
 \item Je\'{s}li $V =$ \{\={0}\} przyjmujemy $dim V = 0$
 \end{itemize}
 \end{df}
-%% def 1.31 standardowy iloczyn skalarny
+%% def 1.33 standardowy iloczyn skalarny
 \begin{df}
 Standardowym iloczynem skalarnym $u = (u_{1}, \dots, u_{n}) \in \mathbb{R}^{n}$ oraz $v = (v_{1}, \dots, v_{n}) \in \mathbb{R}^{n}$ nazywamy liczb\k{e} $<u, v> := \sum_{i=1}^{n} u_{i}v_{i} = u_{1}v_{1} + \dots + u_{n}v_{n}$, gdzie $(\mathbb{R}^{n},+,*)$ jest przestrzeni\k{a} wektorow\k{a} nad cia{\l}em $\mathbb{R}$.
 \end{df}
-%% df 1.32 wektor normalny
+%% df 1.34 wektor normalny
 \begin{df}
 Wektorem normalnym nazywamy wektor prostopad{\l}y do danej przestrzeni.
 \end{df}
@@ -318,7 +327,7 @@ Jak wida\'{c} nawet dla ma{\l}o skomplikowanego automatu synchronicznego mo\.{z}
 %% SEKCJA 3 Algorytm znajdowania słowa sychronizującego
 \section{Algorytm znajdowania s{\l}owa synchronizuj\k{a}cego.}
 
-Za{\l}\'{o}\.{z}my, \.{z}e mamy dany automat  $\mathscr{A}=(Q, \Sigma, \delta)$. Konstruujemy automat pot\k{e}gowy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o}r $P'(Q)$, kt\'{o}ry jest niepustym podzbiorem Q, a funkcja przejscia $\delta$ jest naturalnie rozszerzona do zbioru $P'(Q)\times \Sigma$. Inaczej m\'{o}wi\k{a}c dla ka\.{z}dego niepustego podzbioru $P$ zbioru $Q$ oraz $a \in \Sigma$ mamy $\delta(P,a)=\{\delta(p,a) | p \in P\}$.
+Za{\l}\'{o}\.{z}my, \.{z}e mamy dany automat  $\mathscr{A}=(Q, \Sigma, \delta)$. Konstruujemy automat pot\k{e}gowy $P(\mathscr{A})$. Jego zbi\'{o}r stan\'{o}w to zbi\'{o}r $P'(Q)$, kt\'{o}ry jest zbiorem niepustych podzbior\'{o}w $Q$, a funkcja przejscia $\delta$ jest naturalnie rozszerzona do zbioru $P'(Q)\times \Sigma$. Inaczej m\'{o}wi\k{a}c dla ka\.{z}dego niepustego podzbioru $P$ zbioru $Q$ oraz $a \in \Sigma$ mamy $\delta(P,a)=\{\delta(p,a) | p \in P\}$.
 \\
 %% Rysunek 6
 \begin{figure}[H]
