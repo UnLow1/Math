@@ -401,7 +401,7 @@ Przywo{\l}ajmy najpierw konstrukcj\k{e} \v Cernego. Dla liczby naturalnej $n>1$ 
 $\delta(0,a)=1$\\
 $\delta(m,a)=m$ for $0<m<n$\\
 $\delta(m,b)=m+1(modn)$
-%% Rysunek 
+%% Rysunek 9
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{rysunek7}
@@ -419,7 +419,7 @@ Hipoteza w swej obecnej postaci zosta{\l}a sformu{\l}owana troch\k{e} p\'ozniej,
 
 W rozdziale sz\'ostym przedstawiona zosta{\l}a tre\'s\'c hipotezy \v Cernego oraz pewne g\'orne oszacowania funkcji $C_{n}$, kt\'ore z  biegiem czasu stawa{\l}y si\k{e} coraz dok{\l}adniejsze. Najdok{\l}adniejsze znane g\'orne ograniczenie funkcji \v Cernego gwarantuje to, \.ze dla ka\.zdego automatu synchronicznego posiadaj\k{a}cego $n$ stan\'ow istnieje s{\l}owo resetuj\k{a}ce o d{\l}ugo\'sci $\frac{n^{3}-n}{6}$. Takie s{\l}owo resetuj\k{a}ce powstaje w wyniku nast\k{e}puj\k{a}cego algorytmu.\\
 
-
+%% Algorytm 7.1
 \textbf{Algorytm 7.1}\\ 
 \textbf{wej\'scie}: $\mathscr{A}=(Q, \Sigma, \delta)$\\
 \textbf{inicjalizacja}: \\
@@ -434,13 +434,14 @@ $P\leftarrow \delta(P,v)$\\
  
 Je\'sli $|Q|=n$ to p\k{e}tla g{\l}\'owna algorytmu 7.1 jest wykonywana co najwy\.zej $n-1$ razy. Dzieje si\k{e} tak w  przypadku gdy w każdej iteracji $|P|-|\delta(P,v)|=1$. W celu oszacowania d{\l}ugo\'sci s{\l}owa wyj\'sciowego $w$ musimy estymowa\'c d{\l}ugo\'s\'c ka\.zdego s{\l}owa $v$ uzyskanego w  p\k{e}tli g{\l}\'ownej. 
 Rozwa\.zmy og\'olny krok, w kt\'orym $|P|=k>1$ i za{\l}\'o\.zmy \.ze $v=a_{1}\ldots a_{l}$, gdzie $a_{i}\in \Sigma, i=1,\ldots, l$. {\L}atwo zauwa\.zy\'c, \.ze zbiory $P_{1}=P, P_{2}=\delta(P_{1},a_{1}),\ldots, P_{l}=\delta(P_{l-1},a_{l-1})$ s\k{a} $k$-elementowymi podzbiorami $Q$. Ponadto je\'sli $|\delta(P_{l},a_{l})|<|P_{l}|$, to istniej\k{a} dwa stany $q_{l},q'_{l}\in P_{l}$ takie, \.ze $\delta(q_{l},a_{l})=\delta(q'_{l},a_{l})$. Teraz zdefiniujmy  $2$-elementowe podzbiory $R_{i}=\{q_{i},q'_{i}\}\subseteq P_{i}, i=1,\ldots,l$ takie, \.ze $\delta(q_{i},a_{i})=q_{i+1}, \delta(q'_{i},a_{i})=q'_{i+1}, i=1,\ldots,l-1$. Dla $1\leq i<j\leq l$ $R_{j}\not\subseteq P_{i}$, poniewa\.z wprzeciwnym przypadku istnia{\l}oby s{\l}owo $v'=a_{1}\cdot\ldots\cdot a_{i-1}a_{j}\cdot\ldots\cdot a_{l}$ takie, \.ze $|\delta(P_{k},v')|<|P_{k}|$, co jest sprzeczne z  minimaln\k{a} d{\l}ugo\'sci\k{a} s{\l}owa $v$. Dochodzimy do poni\.zszego, kombinatorycznego problemu.
-
+%% Problem 7.1
 \begin{pro}
+\label{problem3}
 Niech $Q$ b\k{e}dzie $n$-elementowym zbiorem, $P_{1},\ldots,P_{l}$ ci\k{a}giem $k$-elementowych podzbior\'ow zbioru $Q$, $(k>1)$, a $R_{1},\ldots,R_{l}$ ci\k{a}giem $2$-elementowych podzbior\'ow zbioru $Q$. Przypu\'s\'cmy $R_{i}\subseteq P_{i}$ dla ka\.zdego $i=1,\ldots,l$, ale $R_{j}\not\subseteq P_{i}$ dla $1\leq i<j\leq l$. Jak du\.za liczba $l$ mo\.ze by\'c?
 \end{pro}
 
-Problem 7.1 zosta{\l} rozwi\k{a}zany przez Petera Frankla w 1982 roku \cite{6}, kt\'ory udowodni{\l} nast\k{e}puj\k{a}ce twierdzenie: 
-
+Problem \ref{problem3} zosta{\l} rozwi\k{a}zany przez Petera Frankla w 1982 roku \cite{6}, kt\'ory udowodni{\l} nast\k{e}puj\k{a}ce twierdzenie: 
+%% Twierdzenie 7.1
 \begin{twr} 
 Niech $A_{1},\ldots,A_{m}$ b\k{e}dzie ci\k{a}giem zbior\'ow o mocy $r$, a $B_{1},\ldots,B_{m}$ b\k{e}dzie ci\k{a}giem zbior\'ow o mocy $s$, spe{\l}niaj\k{a}cych: $A_{i}\cap B_{i}=\emptyset$ dla $i=1,\ldots,m$ oraz $A_{i}\cap B_{j}\neq\emptyset$ dla $i<j$. Wtedy zachodzi nie\'owno\'s\'c:
 \begin{equation} 
