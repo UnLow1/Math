@@ -372,20 +372,23 @@ Automat pot\k{e}gowy synchronicznego automatu mo\.ze by\'c u\.zyteczny w konstru
 \\
 Rozwa\.zmy teraz dwa nast\k{e}puj\k{a}ce problemy:
 
-%% Problem 4.1
+%% Problem 5.1
 \begin{pro}
+\label{problem1}
 (Kr\'otkie s{\l}owo resetuj\k{a}ce.) Maj\k{a}c automat synchroniczny  $\mathscr{A}=(Q, \Sigma, \delta)$ i liczb\k{e} naturaln\k{a} $l$, czy prawd\k{a} jest to, \.ze $\mathscr{A}$ posiada s{\l}owo resetuj\k{a}ce o d{\l}ugo\'sci $l$?
 \end{pro}
 
-%% Problem 4.2
-\begin{pro} (Najkr\'otsze s{\l}owo resetuj\k{a}ce.) Maj\k{a}c automat synchroniczny  $\mathscr{A}=(Q, \Sigma, \delta)$ i liczb\k{e} naturaln\k{a} $l$, czy prawd\k{a} jest to, \.ze minimalna  d{\l}ugo\'s\'c s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ jesr r\'owna $l$?
+%% Problem 5.2
+\begin{pro} 
+\label{problem2}
+(Najkr\'otsze s{\l}owo resetuj\k{a}ce.) Maj\k{a}c automat synchroniczny  $\mathscr{A}=(Q, \Sigma, \delta)$ i liczb\k{e} naturaln\k{a} $l$, czy prawd\k{a} jest to, \.ze minimalna  d{\l}ugo\'s\'c s{\l}owa resetuj\k{a}cego automat $\mathscr{A}$ jesr r\'owna $l$?
 \end{pro}
 
-Oczywi\'scie problem 5.1 nale\.zy do klasy z{\l}o\.zono\'sci NP; mo\.zna nie -deterministycznie odgadn\k{a}\'c s{\l}owo $w\in\Sigma^{*}$ o d{\l}ugo\'sci $l$, a nast\k{e}pnie sprawdzi\'c czy $w$ jest s{\l}owem resetuj\k{a}cym automat $\mathscr{A}$ w czasie wielomianowym. David Eppstein udowodni{\l}, w 1990 roku \.ze problem 5.1 jest NP-trudny przez wielomianow\k{a} redukcj\k{e} z problemu NP-zupe{\l}nego. Dlatego problem 5.1 jest NP-zupe{\l}ny. Z dowodu tego {\l}atwo wynika, \.ze problem 5.2 jest NP-trudny. Wojciech Samotij \cite{1} pokaza{\l}, \.ze negacja NP-zupe{\l}no\'sci mo\.ze by\'c wielomianowo zredukowana do problemu 5.2, sk\k{a}d ostatni problem r\'ownie\.z jest coNP-trudny. Jako konsekwencja problem 5.2 nie mo\.ze nale\.ze\'c do klasy NP je\.zeli nieprawd\k{a} jest, \.ze NP=coNP, co jest powszechnie uwa\.zane za ma{\l}o prawdopodobne. Innymi s{\l}owy, nawet nie-deterministyczny algorytm nie mo\.ze znale\'z\'c minimalnej d{\l}ugo\'sci s{\l}owa resetuj\k{a}cego dla danego automatu synchronicznego w czasie wielomianowym.
+Oczywi\'scie Problem \ref{problem1} nale\.zy do klasy z{\l}o\.zono\'sci NP; mo\.zna nie -deterministycznie odgadn\k{a}\'c s{\l}owo $w\in\Sigma^{*}$ o d{\l}ugo\'sci $l$, a nast\k{e}pnie sprawdzi\'c czy $w$ jest s{\l}owem resetuj\k{a}cym automat $\mathscr{A}$ w czasie wielomianowym. David Eppstein udowodni{\l}, w 1990 roku \.ze Problem \ref{problem1} jest NP-trudny przez wielomianow\k{a} redukcj\k{e} z problemu NP-zupe{\l}nego. Dlatego Problem \ref{problem1} jest NP-zupe{\l}ny. Z dowodu tego {\l}atwo wynika, \.ze Problem \ref{problem2} jest NP-trudny. Wojciech Samotij \cite{1} pokaza{\l}, \.ze negacja NP-zupe{\l}no\'sci mo\.ze by\'c wielomianowo zredukowana do Problemu \ref{problem2}, sk\k{a}d ostatni problem r\'ownie\.z jest coNP-trudny. Jako konsekwencja Problem \ref{problem2} nie mo\.ze nale\.ze\'c do klasy NP je\.zeli nieprawd\k{a} jest, \.ze NP=coNP, co jest powszechnie uwa\.zane za ma{\l}o prawdopodobne. Innymi s{\l}owy, nawet nie-deterministyczny algorytm nie mo\.ze znale\'z\'c minimalnej d{\l}ugo\'sci s{\l}owa resetuj\k{a}cego dla danego automatu synchronicznego w czasie wielomianowym.
 
-Z drugiej strony wyczerpuj\k{a}ce przeszukiwanie wszystkich s{\l}\'ow nad alfabetem $\Sigma$ o d{\l}ugo\'sci $\leq l$ mo\.ze zosta\'c wykonane w pami\k{e}ci wielomianowej, a w rzeczywisto\'sci w liniowej. Dlatego problem 5.2 nale\.zy do klasy z{\l}o\.zono\'sci PSPACE. Pytanie o precyzyjne ulokowanie tego problemu w odniesieniu do hierarchii wielomian\'ow wci\k{a}\.z pozostaje otwarte. 
+Z drugiej strony wyczerpuj\k{a}ce przeszukiwanie wszystkich s{\l}\'ow nad alfabetem $\Sigma$ o d{\l}ugo\'sci $\leq l$ mo\.ze zosta\'c wykonane w pami\k{e}ci wielomianowej, a w rzeczywisto\'sci w liniowej. Dlatego Problem \ref{problem2} nale\.zy do klasy z{\l}o\.zono\'sci PSPACE. Pytanie o precyzyjne ulokowanie tego problemu w odniesieniu do hierarchii wielomian\'ow wci\k{a}\.z pozostaje otwarte. 
 
-Trudno\'s\'c problemu decyzyjnego w 5.1 implikuje to, \.ze jego zoptymalizowana wersja, w kt\'orej szuka si\k{e} s{\l}owa resetuj\k{a}cego o minimalnej d{l}ugo\'sci dla danego automatu synchronicznego r\'ownie\.z jest trudna. Jednak\.ze to nie wyklucza tego, \.ze problem optymalizacji mo\.ze dopuszcza\.c wielomianowy algorytm aproksymacji, co wi\k{e}cej wszystkie istniej\k{a}ce dowody tego, \.ze problem 5.1 jest NP-trudny s\k{a} zgodne z  przypuszczeniem \.ze taki algorytm istnieje. Orzeczenie czy to przypuszczenie jest prawdziwe, czy te\.z nie stanowi ciekawy problem badawczy. Carl Pixley \cite{2} w 1992 zasugewowa{\l} heurystyczny algorytm znajdowania kr\'otkiego s{\l}owa resetuj\k{a}cego dla automatu synchronicznego, kt\'ory zosta{\l} wykorzystany do wykonywania zadowalaj\k{a}cych ilo\'sci test\'ow. P\'o\'zniej algorytmy szukaj\k{a}ce kr\'otkich s{\l}\'ow resetuj\k{a}cych zosta{\l}y zaimplementowane przez Avrahama Trahtmana \cite{3}.
+Trudno\'s\'c problemu decyzyjnego w Problemie \ref{problem1} implikuje to, \.ze jego zoptymalizowana wersja, w kt\'orej szuka si\k{e} s{\l}owa resetuj\k{a}cego o minimalnej d{l}ugo\'sci dla danego automatu synchronicznego r\'ownie\.z jest trudna. Jednak\.ze to nie wyklucza tego, \.ze problem optymalizacji mo\.ze dopuszcza\.c wielomianowy algorytm aproksymacji, co wi\k{e}cej wszystkie istniej\k{a}ce dowody tego, \.ze Problem \ref{problem1} jest NP-trudny s\k{a} zgodne z  przypuszczeniem \.ze taki algorytm istnieje. Orzeczenie czy to przypuszczenie jest prawdziwe, czy te\.z nie stanowi ciekawy problem badawczy. Carl Pixley \cite{2} w 1992 zasugewowa{\l} heurystyczny algorytm znajdowania kr\'otkiego s{\l}owa resetuj\k{a}cego dla automatu synchronicznego, kt\'ory zosta{\l} wykorzystany do wykonywania zadowalaj\k{a}cych ilo\'sci test\'ow. P\'o\'zniej algorytmy szukaj\k{a}ce kr\'otkich s{\l}\'ow resetuj\k{a}cych zosta{\l}y zaimplementowane przez Avrahama Trahtmana \cite{3}.
 
 
 %% SEKCJA 6 Hipoteza Cernego
