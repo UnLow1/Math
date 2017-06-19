@@ -388,7 +388,7 @@ Oczywi\'scie Problem \ref{problem1} nale\.zy do klasy z{\l}o\.zono\'sci NP; mo\.
 
 Z drugiej strony wyczerpuj\k{a}ce przeszukiwanie wszystkich s{\l}\'ow nad alfabetem $\Sigma$ o d{\l}ugo\'sci $\leq l$ mo\.ze zosta\'c wykonane w pami\k{e}ci wielomianowej, a w rzeczywisto\'sci w liniowej. Dlatego Problem \ref{problem2} nale\.zy do klasy z{\l}o\.zono\'sci PSPACE. Pytanie o precyzyjne ulokowanie tego problemu w odniesieniu do hierarchii wielomian\'ow wci\k{a}\.z pozostaje otwarte. 
 
-Trudno\'s\'c problemu decyzyjnego w Problemie \ref{problem1} implikuje to, \.ze jego zoptymalizowana wersja, w kt\'orej szuka si\k{e} s{\l}owa resetuj\k{a}cego o minimalnej d{l}ugo\'sci dla danego automatu synchronicznego r\'ownie\.z jest trudna. Jednak\.ze to nie wyklucza tego, \.ze problem optymalizacji mo\.ze dopuszcza\.c wielomianowy algorytm aproksymacji, co wi\k{e}cej wszystkie istniej\k{a}ce dowody tego, \.ze Problem \ref{problem1} jest NP-trudny s\k{a} zgodne z  przypuszczeniem \.ze taki algorytm istnieje. Orzeczenie czy to przypuszczenie jest prawdziwe, czy te\.z nie stanowi ciekawy problem badawczy. Carl Pixley \cite{2} w 1992 zasugewowa{\l} heurystyczny algorytm znajdowania kr\'otkiego s{\l}owa resetuj\k{a}cego dla automatu synchronicznego, kt\'ory zosta{\l} wykorzystany do wykonywania zadowalaj\k{a}cych ilo\'sci test\'ow. P\'o\'zniej algorytmy szukaj\k{a}ce kr\'otkich s{\l}\'ow resetuj\k{a}cych zosta{\l}y zaimplementowane przez Avrahama Trahtmana \cite{3}.
+Trudno\'s\'c problemu decyzyjnego w Problemie \ref{problem1} implikuje to, \.ze jego zoptymalizowana wersja, w kt\'orej szuka si\k{e} s{\l}owa resetuj\k{a}cego o minimalnej d{l}ugo\'sci dla danego automatu synchronicznego r\'ownie\.z jest trudna. Jednak\.ze to nie wyklucza tego, \.ze problem optymalizacji mo\.ze dopuszcza\.c wielomianowy algorytm aproksymacji, co wi\k{e}cej wszystkie istniej\k{a}ce dowody tego, \.ze Problem \ref{problem1} jest NP-trudny s\k{a} zgodne z  przypuszczeniem \.ze taki algorytm istnieje. Orzeczenie czy to przypuszczenie jest prawdziwe, czy te\.z nie stanowi ciekawy problem badawczy. Carl Pixley \cite{2} w 1992 zasugewowa{\l} heurystyczny algorytm znajdowania kr\'otkiego s{\l}owa resetuj\k{a}cego dla automatu synchronicznego, kt\'ory zosta{\l} wykorzystany do wykonywania zadowalaj\k{a}cych ilo\'sci test\'ow. P\'o\'zniej algorytmy szukaj\k{a}ce kr\'otkich s{\l}\'ow resetuj\k{a}cych zosta{\l}y zaimplementowane przez Avrahama Trahtmana \cite{6}.
 
 
 %% SEKCJA 6 Hipoteza Cernego
@@ -411,7 +411,7 @@ $\delta(m,b)=m+1(modn)$
 
 \v Cerny udowodni{\l}, \.ze $C_{n}$ jest automatem synchronicznym i najkr\'otszym resetuj\k{a}cym go s{\l}owem jest $(ab^{n-1})^{n-2}a$ o d{\l}ugo\'sci $(n-1)^{2}$. Zatem je\'sli zdefiniujemy funkcj\k{e} \v Cernego $C(n)$ jako d{\l}ugo\'s\'c najkr\'otszego s{\l}owa resetuj\k{a}cego automat synchroniczny posiadaj\k{a}cy $n$ stan\'ow powy\.zsza w{\l}asno\'s\'c dla ci\k{a}gu $\{C_{n}\}_{n=2,3,\ldots}$ daje nier\'owno\'s\'c: $C(n)\leq(n-1)^{2}$. Hipoteza \v Cernego m\'owi, \.ze tak naprawd\k{e} zachodzi r\'owno\'s\'c: $C(n)=(n-1)^{2}$. W literaturze mo\.zna spotka\'c nawi\k{a}zania do tego, \.ze praca \v Cernego z 1964 roku jest \'zr\'od{\l}em tej hipotezy, ale tak naprawd\k{e} nie zosta{\l}a ona wtedy sformu{\l}owana. Jednak\.ze \v Cerny zaobserwowa{\l}, \.ze: $(n-1)^{2}\leq C(n)\leq2^{n}-n-1$ i za{\l}\k{a}czy{\l} do tego nast\k{e}puj\k{a}c\k{a} uwag\k{e}: "R\'o\.znica pomi\k{e}dzy granicami wzrasta szybko i nale\.zy je zacie\'sni\'c. Mo\.zna si\k{e} spodziewa\'c polepszenia g{\l}\'ownie dla g\'ornej granicy."
 
-Hipoteza w swej obecnej postaci zosta{\l}a sformu{\l}owana troch\k{e} p\'ozniej, po tym jak oczekiwania zawarte w powy\.zszym cytacie zosta{\l}y potwierdzone przez Peter'a Starke'a \cite{4}, kt\'ory pomniejszy{\l} g\'orn\k{a} granic\k{e} do $1+\frac{n(n-1)(n-2)}{2}$, co by{\l}o pierwsz\k{a} wielomianow\k{a} g\'orn\k{a} granic\k{a} dla $C(n)$. \v Cerny wypowiedzia{\l} hipotez\k{e} $C(n)=(n-1)^{2}$ na Konferencji Cybernetycznej  w Bratys{\l}awie w 1969 roku.
+Hipoteza w swej obecnej postaci zosta{\l}a sformu{\l}owana troch\k{e} p\'ozniej, po tym jak oczekiwania zawarte w powy\.zszym cytacie zosta{\l}y potwierdzone przez Peter'a Starke'a \cite{5}, kt\'ory pomniejszy{\l} g\'orn\k{a} granic\k{e} do $1+\frac{n(n-1)(n-2)}{2}$, co by{\l}o pierwsz\k{a} wielomianow\k{a} g\'orn\k{a} granic\k{a} dla $C(n)$. \v Cerny wypowiedzia{\l} hipotez\k{e} $C(n)=(n-1)^{2}$ na Konferencji Cybernetycznej  w Bratys{\l}awie w 1969 roku.
 
 
 %% SEKCJA 7 Oszacowanie długości słowa synchronizującego z dowodem
@@ -440,7 +440,7 @@ Rozwa\.zmy og\'olny krok, w kt\'orym $|P|=k>1$ i za{\l}\'o\.zmy \.ze $v=a_{1}\ld
 Niech $Q$ b\k{e}dzie $n$-elementowym zbiorem, $P_{1},\ldots,P_{l}$ ci\k{a}giem $k$-elementowych podzbior\'ow zbioru $Q$, $(k>1)$, a $R_{1},\ldots,R_{l}$ ci\k{a}giem $2$-elementowych podzbior\'ow zbioru $Q$. Przypu\'s\'cmy $R_{i}\subseteq P_{i}$ dla ka\.zdego $i=1,\ldots,l$, ale $R_{j}\not\subseteq P_{i}$ dla $1\leq i<j\leq l$. Jak du\.za liczba $l$ mo\.ze by\'c?
 \end{pro}
 
-Problem \ref{problem3} zosta{\l} rozwi\k{a}zany przez Petera Frankla w 1982 roku \cite{6}, kt\'ory udowodni{\l} nast\k{e}puj\k{a}ce twierdzenie: 
+Problem \ref{problem3} zosta{\l} rozwi\k{a}zany przez Petera Frankla w 1982 roku \cite{1}, kt\'ory udowodni{\l} nast\k{e}puj\k{a}ce twierdzenie: 
 %% Twierdzenie 7.1
 \begin{twr} 
 Niech $A_{1},\ldots,A_{m}$ b\k{e}dzie ci\k{a}giem zbior\'ow o mocy $r$, a $B_{1},\ldots,B_{m}$ b\k{e}dzie ci\k{a}giem zbior\'ow o mocy $s$, spe{\l}niaj\k{a}cych: $A_{i}\cap B_{i}=\emptyset$ dla $i=1,\ldots,m$ oraz $A_{i}\cap B_{j}\neq\emptyset$ dla $i<j$. Wtedy zachodzi nie\'owno\'s\'c:
@@ -449,7 +449,7 @@ m\leq{{r+s}\choose{s}}
 \end{equation}
 \end{twr} 
 
-\begin{proof}[Dow\'od]\cite{5}
+\begin{proof}[Dow\'od]\cite{3}
 Oznaczamy $X=\bigcup_{i=1}^{m} (A_i \cup B_{i})$. X jest zbiorem sko\'nczonym. Wybieramy zbi\'or $V\in\mathbb{R}^{r+1}$, spe{\l}niaj\k{a}cy warunki: 
 \begin{enumerate}[1)]
 \item $|V|=|X|$ 
@@ -482,14 +482,14 @@ Teraz tez\k{e} twierdzenia 7.1, wykorzystujemy do rozwi\k{a}zania problemu 7.1. 
 
 
 \begin{thebibliography}{99}
-\bibitem{1} Frankl P., \textit{An Extremal Problem for Two Families of Sets}, European Journal of Combinatorics
+\bibitem{1} Frankl Peter, \textit{An Extremal Problem for Two Families of Sets}, European Journal of Combinatorics
 tom 3, problem 2, czerwiec 1982, s. 125-127
-\bibitem{2} Pixley C., Jeong S., Hatchel G., \textit{Exact calculation of synchronization sequences based on decision diagrams}, in Proc. 29th Design Automation Conf./ IEEE, s. 620-623.
-\bibitem{3} Rampersad N., \textit{\v Cerny's Conjecture}, Department of Mathematics and Statistics, University of Winnipeg, 27 pa\'[z]dziernik 2008.
-\bibitem{4} Samotij W., \textit{A note on the complexity of the problem of finding shortest synchronizing words}, Palermo AUTOMATA 2007. 
-\bibitem{5} Starke P., \textit{Eine Bemerkung \H uber homogene Experimente}, Elektronische Informationverarbeitung und Keybernetic, 2 (1996), s. 257-259.
-\bibitem{6} Trahtman A., \textit{An efficient algorithm finds noticeable trends concerning the \v Cern\'y conjecture}, 31st Int. Symp. on Math. Found. of Comput. Sci. 2006. LNCS 4162 (2006), s. 789-800. 
-\bibitem{7} Volkov M., \textit{Synchronizing Automata and the \v Cerny Conjecture}, Conference: Language and Automata Theory and Applications, Second International Conference, LATA 2008, Tarragona, Hiszpania, marzec 13-19, 2008. Revised Papers
+\bibitem{2} Pixley Carl, Jeong Seh-Woong, Hatchel Gary D., \textit{Exact calculation of synchronization sequences based on decision diagrams}, in Proc. 29th Design Automation Conf./ IEEE, s. 620-623.
+\bibitem{3} Rampersad Narad, \textit{\v Cerny's Conjecture}, Department of Mathematics and Statistics, University of Winnipeg, 27 pa\'[z]dziernik 2008.
+\bibitem{4} Samotij Wojciech, \textit{A note on the complexity of the problem of finding shortest synchronizing words}, Palermo AUTOMATA 2007. 
+\bibitem{5} Starke Peter H., \textit{Eine Bemerkung \H uber homogene Experimente}, Elektronische Informationverarbeitung und Keybernetic, 2 (1996), s. 257-259.
+\bibitem{6} Trahtman Avraham, \textit{An efficient algorithm finds noticeable trends concerning the \v Cern\'y conjecture}, 31st Int. Symp. on Math. Found. of Comput. Sci. 2006. LNCS 4162 (2006), s. 789-800. 
+\bibitem{7} Volkov Mikhail V., \textit{Synchronizing Automata and the \v Cerny Conjecture}, Conference: Language and Automata Theory and Applications, Second International Conference, LATA 2008, Tarragona, Hiszpania, marzec 13-19, 2008. Revised Papers
 \end{thebibliography}
 
 \end{document}
