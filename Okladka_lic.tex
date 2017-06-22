@@ -308,8 +308,9 @@ Ka\.{z}dy taki element wk{\l}adamy do pude{\l}ka, lecz zanim to zrobimy musimy j
     \label{fig:rysunek4}
 \end{figure}
 
-Za{\l}\'{o}\.{z}my, \.{z}e interesuj\k{a}ca dla nas jest druga od lewej strony orientacja elementu. Skorzystamy z lekko zmodyfikowanego automatu, kt\'{o}ry juz wcze\'{s}niej poznali\'{s}my, a dok{\l}adniej z automatu przedstawionego na Rysunku \ref{fig:rysunek1}. G{\l}\'{o}wna zmiana b\k{e}dzie polega{\l}a na tym, i\.{z} mo\.{z}liwe stany, kt\'{o}re automat mo\.{z}e przyj\k{a}\'{c} b\k{e}d\k{a} kolejnymi orientacjami tego elementu, a alfabet $\Sigma = \{HIGH, low\}$. Element b\k{e}dzie zmienia{\l} swoj\k{a} orientacj\k{e}, zostanie obr\'{o}cony o $90^\circ$ zgodnie z ruchem wskaz\'{o}wek zegara, gdy dostanie wyraz $HIGH$, natomiast reakcj\k{a} na wyraz $low$ b\k{e}dzie pozostanie przy aktualnej pozycji elementu.
-\\
+Za{\l}\'{o}\.{z}my, \.{z}e interesuj\k{a}ca dla nas jest druga od lewej strony orientacja elementu. Skorzystamy z lekko zmodyfikowanego automatu, kt\'{o}ry ju\.{z} wcze\'{s}niej poznali\'{s}my, a dok{\l}adniej z automatu przedstawionego na Rysunku \ref{fig:rysunek1}. G{\l}\'{o}wna zmiana b\k{e}dzie polega{\l}a na tym, i\.{z} mo\.{z}liwe stany, kt\'{o}re automat mo\.{z}e przyj\k{a}\'{c} b\k{e}d\k{a} kolejnymi orientacjami tego elementu. \newline
+Mo\.{z}na te\.{z} ten problem interpretowa\'{c} jako problem zwi\k{a}zany z pasem transmisyjnym i przeszkodami, kt\'{o}re to w zale\.{z}no\'{s}ci od ich wysoko\'{s}ci oraz od aktualnej orientacji elementu mog\k{a} go obr\'{o}ci\'{c} b\k{a}d\'{z} pozostawi\'{c} w obecnej pozycji. Je\'{s}li wypustka elementu jest na dole to zawsze zahaczy on o przeszkod\k{e}, w przeciwnym wypadku element zawadzi o przeszkod\k{e} tylko je\'{s}li jej wysoko\'{s}\'{c} b\k{e}dzie $HIGH$. Skutkiem kontaktu elementu z przeszkod\k{a} b\k{e}dzie obr\'{o}cenie elementu o $90^\circ$ zgodnie z ruchem wskaz\'{o}wek zegara, czyli do nast\k{e}pnej pozycji. Mo\.{z}liwe wysoko\'{s}ci przeszk\'{o}d to elementy alfabetu $\Sigma = \{low, GHIGH\}$.
+
 %% Rysunek 5
 \begin{figure}[H]
     \centering
